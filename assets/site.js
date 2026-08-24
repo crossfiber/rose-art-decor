@@ -1,9 +1,9 @@
 /* ==========================================================================
-   Rose Art & Decor — site.js
-   Mechanics sourced from the Builda mechanics library (scroll restore, drawer,
-   accordion w/ resize resync, anchor hash strip, branded form validation),
-   plus this build's two new ones: the EN/ES language engine and the
-   colour-story gallery filter + lightbox.
+   Rose Art & Decor / site.js
+   Mechanics taken from builda-mechanics.md: scroll restoration, drawer,
+   accordion with resize resync, anchor hash strip, branded form validation,
+   CTA intent routing. New to this build: the EN/ES language engine and the
+   color-story gallery filter with lightbox.
    ========================================================================== */
 if ('scrollRestoration' in history) { history.scrollRestoration = 'auto'; }
 
@@ -76,14 +76,7 @@ if ('scrollRestoration' in history) { history.scrollRestoration = 'auto'; }
     b.addEventListener('click', function () { applyLang(b.getAttribute('data-set')); });
   });
 
-  /* -------------------------------------------------------- 2. nav/drawer -- */
-  var nav = $('.nav');
-  var onScroll = function () {
-    if (nav) nav.classList.toggle('scrolled', window.scrollY > 12);
-  };
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-
+  /* ------------------------------------------------------------- 2. drawer -- */
   var hamburger = $('#hamburger');
   var drawer = $('#navDrawer');
   var overlay = $('#navOverlay');
@@ -330,7 +323,7 @@ if ('scrollRestoration' in history) { history.scrollRestoration = 'auto'; }
       data.append('submit', 'Submit');
 
       var btn = $('#submitBtn');
-      if (btn) { btn.disabled = true; btn.textContent = lang === 'es' ? 'Enviando…' : 'Sending…'; }
+      if (btn) { btn.disabled = true; btn.textContent = lang === 'es' ? 'Enviando' : 'Sending'; }
 
       var done = function () {
         form.classList.add('sent');
@@ -359,19 +352,6 @@ if ('scrollRestoration' in history) { history.scrollRestoration = 'auto'; }
     });
   }
 
-  /* ------------------------------------------------------- 7. reveal ------ */
-  var rv = $$('.rv');
-  if (rv.length && 'IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) {
-        if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
-      });
-    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.06 });
-    rv.forEach(function (el) { io.observe(el); });
-  } else {
-    rv.forEach(function (el) { el.classList.add('in'); });
-  }
-
-  /* -------------------------------------------------------- 8. year ------- */
+  /* -------------------------------------------------------- 7. year ------- */
   $$('[data-year]').forEach(function (el) { el.textContent = new Date().getFullYear(); });
 })();
