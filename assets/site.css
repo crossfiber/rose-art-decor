@@ -446,10 +446,21 @@ form.sent{display:none;}
   .wrap,.wrap-narrow{width:calc(100% - 32px);}
   .bleed{padding-inline:16px;}
   /* tap targets: nothing interactive under 44px on a phone */
-  .lang{padding:2px;}
-  .lang button{min-height:40px;padding:6px 14px;}
+  .lang{padding:0;}
+  .lang button{min-height:44px;padding:6px 14px;}
   .filters button{min-height:44px;}
   .brand{padding:4px 0;}
+  .built-by{min-height:44px;}
+  /* 3 service cards in a 2-up grid leaves an orphan, so they swipe instead */
+  .cards{
+    display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;
+    scroll-padding:0 16px;scrollbar-width:none;-ms-overflow-style:none;padding-bottom:2px;
+  }
+  .cards::-webkit-scrollbar{display:none;}
+  .card{flex:0 0 78%;scroll-snap-align:center;}
+  .acc-head{padding:18px 40px 18px 0;}
+  .acc-body-inner{padding-bottom:20px;}
+  .mini{grid-template-columns:repeat(3,1fr);gap:8px;}
   .foot ul a,.foot address a,.also a{display:inline-flex;align-items:center;min-height:44px;}
   .foot ul{gap:0;}
   .foot address{gap:0;}
