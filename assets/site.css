@@ -248,7 +248,7 @@ body.drawer-open .hamburger{visibility:hidden;}
 
 
 /* ---- the year: a schedule, dense, no boxes ------------------------------ */
-.yr-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:clamp(26px,3.4vw,54px);align-items:start;}
+.yr-grid{display:grid;grid-template-columns:.74fr 1.26fr;gap:clamp(26px,3.4vw,54px);align-items:start;}
 .yr-grid>*{min-width:0;}
 .sched{border-top:1px solid var(--line);}
 .sr{
@@ -287,7 +287,7 @@ body.drawer-open .hamburger{visibility:hidden;}
 .lrow .l{display:block;min-width:0;}
 .lrow .n{display:block;font-family:var(--serif);font-size:1.24rem;font-weight:600;line-height:1.14;color:var(--ink);}
 .lrow .d{display:block;font-size:.87rem;color:var(--muted);margin-top:4px;line-height:1.5;max-width:46ch;}
-.lrow .p{font-family:var(--serif);font-size:1.16rem;font-weight:700;color:var(--burgundy);white-space:nowrap;}
+.lrow .p{font-family:var(--serif);font-size:1.16rem;font-weight:700;color:var(--burgundy);white-space:nowrap;min-width:8.5rem;text-align:right;}
 .lrow .go{
   display:inline-flex;align-items:center;justify-content:center;min-height:40px;min-width:66px;
   border:1px solid var(--line);border-radius:var(--pill);font-size:.78rem;letter-spacing:.04em;
