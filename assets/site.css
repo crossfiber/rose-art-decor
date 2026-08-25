@@ -149,12 +149,12 @@ section{padding:clamp(44px,4.6vw,72px) 0;position:relative;}
 .overlay{position:fixed;inset:0;background:rgba(42,20,24,.55);opacity:0;pointer-events:none;transition:opacity .3s ease;z-index:70;}
 .overlay.open{opacity:1;pointer-events:auto;}
 .drawer{
-  position:fixed;top:0;right:0;bottom:0;width:min(90vw,390px);height:100dvh;z-index:80;
+  position:fixed;top:0;right:0;bottom:0;visibility:hidden;width:min(90vw,390px);height:100dvh;z-index:80;
   background:var(--cream);border-left:1px solid var(--ink);
   transform:translateX(102%);transition:transform .32s cubic-bezier(.4,0,.2,1);
   display:flex;flex-direction:column;padding:20px 24px max(24px,env(safe-area-inset-bottom));overflow-y:auto;
 }
-.drawer.open{transform:translateX(0);}
+.drawer.open{transform:translateX(0);visibility:visible;}
 .drawer-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;}
 .drawer-close{width:48px;height:48px;border:1px solid var(--ink);border-radius:0;background:transparent;cursor:pointer;font-size:1.1rem;color:var(--ink);font-family:var(--sans);}
 .drawer nav{display:flex;flex-direction:column;border-top:1px solid var(--line);}
@@ -413,6 +413,12 @@ form.sent{display:none;}
   .foot-grid{grid-template-columns:1fr 1fr;gap:32px;}
   .pull-grid{grid-template-columns:1fr;gap:26px;}
             }
+@media (max-width:860px){
+  .srow{grid-template-columns:1fr;gap:18px;}
+  .srow:nth-child(even) figure{order:0;}
+  .srow img{max-height:340px;}
+  .ribbon{gap:16px 30px;}
+}
 @media (max-width:940px){
   .nav-links,.nav-cta{display:none;}
   .hamburger{display:flex;}
@@ -429,10 +435,14 @@ form.sent{display:none;}
   .sec-head{margin-bottom:24px;}
   h1{font-size:clamp(2.2rem,9vw,3rem);}
 
-  .lang button{min-height:44px;padding:0 15px;}
-  .brand{padding:4px 0;}
-  .brand img{width:40px;height:40px;}
-  .brand-txt b{font-size:1.06rem;}
+  .nav .wrap{gap:10px;}
+  .brand{padding:4px 0;min-width:0;}
+  .brand-txt{min-width:0;overflow:hidden;}
+  .brand-txt b{white-space:nowrap;}
+  .lang button{min-height:44px;padding:0 10px;font-size:.68rem;letter-spacing:.08em;}
+  .hamburger{width:44px;height:44px;flex-shrink:0;}
+  .brand img{width:36px;height:36px;flex-shrink:0;}
+  .brand-txt b{font-size:1rem;}
   .brand-txt span{font-size:.55rem;letter-spacing:.16em;}
   .built-by{min-height:44px;}
   .foot ul a,.foot address a{display:inline-flex;align-items:center;min-height:44px;}
@@ -452,13 +462,17 @@ form.sent{display:none;}
 
       
   .steps{grid-template-columns:1fr 1fr;}
+  .srow img{max-height:300px;}
+  .stop .oc{font-size:1.28rem;}
+  .ribbon{gap:14px 24px;}
+  .strip p{font-size:1.08rem;}
   .step{padding:22px 16px 24px 0;}
   .step .n{font-size:2.6rem;margin-bottom:12px;}
   .step h3{font-size:1.08rem;}
   .step p{font-size:.85rem;}
 
-  .split-media{max-height:40vh;}
-  .split-media img{height:100%;}
+
+
   .pull{padding-left:16px;}
 
   .acc-head{padding:19px 40px 19px 0;}
