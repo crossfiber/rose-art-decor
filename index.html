@@ -39,7 +39,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <link rel="stylesheet" href="assets/site.css">
 <link rel="preload" as="image" href="assets/tree-red-gold-living-room-day-md.webp" fetchpriority="high">
 
@@ -113,6 +112,7 @@
       <span class="brand-txt"><b>Rose Art &amp; Decor</b><span>Miami</span></span>
     </a>
     <nav class="nav-links">
+      <a href="#year"     data-en="The year"      data-es="El año">The year</a>
       <a href="#work"     data-en="Work"          data-es="Trabajos">Work</a>
       <a href="#services" data-en="Services"      data-es="Servicios">Services</a>
       <a href="#process"  data-en="How it works"  data-es="Cómo funciona">How it works</a>
@@ -137,17 +137,18 @@
     <button class="drawer-close" id="drawerClose" aria-label="Close menu">&times;</button>
   </div>
   <nav>
-    <a href="#work"><i class="fa-solid fa-images"></i><span data-en="Work" data-es="Trabajos">Work</span></a>
-    <a href="#services"><i class="fa-solid fa-holly-berry"></i><span data-en="Services" data-es="Servicios">Services</span></a>
-    <a href="#process"><i class="fa-solid fa-list-ol"></i><span data-en="How it works" data-es="Cómo funciona">How it works</span></a>
-    <a href="#pricing"><i class="fa-solid fa-tags"></i><span data-en="Pricing" data-es="Precios">Pricing</span></a>
-    <a href="#about"><i class="fa-solid fa-people-group"></i><span data-en="About" data-es="Nosotras">About</span></a>
-    <a href="#faq"><i class="fa-solid fa-comments"></i><span data-en="Questions" data-es="Preguntas">Questions</span></a>
+    <a href="#year"><span data-en="The year" data-es="El año">The year</span></a>
+    <a href="#work"><span data-en="Work" data-es="Trabajos">Work</span></a>
+    <a href="#services"><span data-en="Services" data-es="Servicios">Services</span></a>
+    <a href="#process"><span data-en="How it works" data-es="Cómo funciona">How it works</span></a>
+    <a href="#pricing"><span data-en="Pricing" data-es="Precios">Pricing</span></a>
+    <a href="#about"><span data-en="About" data-es="Nosotras">About</span></a>
+    <a href="#faq"><span data-en="Questions" data-es="Preguntas">Questions</span></a>
   </nav>
   <div class="drawer-foot">
     <a class="btn btn-primary" href="#quote" data-en="Get my quote" data-es="Pedir mi cotización">Get my quote</a>
     <a class="btn btn-light" href="https://www.instagram.com/roseartanddecor/" target="_blank" rel="noopener">
-      <i class="fa-brands fa-instagram" style="color:var(--burgundy)"></i><span data-en="Message on Instagram" data-es="Escribir por Instagram">Message on Instagram</span>
+      <span data-en="Message on Instagram" data-es="Escribir por Instagram">Message on Instagram</span>
     </a>
   </div>
 </aside>
@@ -209,28 +210,82 @@
 <section class="strip">
   <div class="wrap">
     <div>
-      <i class="fa-solid fa-people-group" aria-hidden="true"></i>
       <b data-en="The same three people, start to finish" data-es="Las mismas tres personas, de principio a fin">The same three people, start to finish</b>
       <span data-en="Rose, Emi and Rebe design it and install it. Nothing gets subcontracted."
             data-es="Rose, Emi y Rebe lo diseñan y lo instalan. Nada se subcontrata.">Rose, Emi and Rebe design it and install it. Nothing gets subcontracted.</span>
     </div>
     <div>
-      <i class="fa-solid fa-city" aria-hidden="true"></i>
       <b data-en="Homes, offices, lobbies, hotels" data-es="Casas, oficinas, lobbies, hoteles">Homes, offices, lobbies, hotels</b>
       <span data-en="From a 6 foot tree in a corner to a two story lobby display."
             data-es="Desde un árbol de 6 pies en una esquina hasta un lobby de dos pisos.">From a 6 foot tree in a corner to a two story lobby display.</span>
     </div>
     <div>
-      <i class="fa-solid fa-bag-shopping" aria-hidden="true"></i>
       <b data-en="Your decorations, or ours for $50" data-es="Tu decoración, o la nuestra por $50">Your decorations, or ours for $50</b>
       <span data-en="A flat $50 sourcing fee plus what the materials actually cost. No markup."
             data-es="Un cargo fijo de $50 más lo que cuesten los materiales. Sin sobreprecio.">A flat $50 sourcing fee plus what the materials actually cost. No markup.</span>
     </div>
     <div>
-      <i class="fa-solid fa-language" aria-hidden="true"></i>
       <b data-en="Español y English" data-es="Español y English">Español y English</b>
       <span data-en="Quote, questions and install day in whichever you speak at home."
             data-es="Cotización, preguntas e instalación en el idioma que hablas en casa.">Quote, questions and install day in whichever you speak at home.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== THE YEAR: the seasonal calendar ================= -->
+<section id="year">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="chapter" data-en="01 / The year" data-es="01 / El año">01 / The year</p>
+      <h2>
+        <span data-en="A studio that runs on a calendar" data-es="Un estudio que corre con el calendario">A studio that runs on a calendar</span>
+        <span class="sub-es" data-en="Un estudio que corre con el calendario" data-es="A studio that runs on a calendar">Un estudio que corre con el calendario</span>
+      </h2>
+      <p class="lede" data-en="Christmas is the mountain, and it is booked from August. The rest of the year has its own occasions, and the same three people design them the same way."
+                      data-es="Navidad es la montaña, y se reserva desde agosto. El resto del año tiene sus propias ocasiones, y las mismas tres personas las diseñan igual.">
+        Christmas is the mountain, and it is booked from August. The rest of the year has its own occasions, and the same three people design them the same way.
+      </p>
+    </div>
+
+    <div class="cal">
+      <div class="cal-row">
+        <div class="cal-cell">
+          <span class="mo" data-en="February" data-es="Febrero">February</span>
+          <span class="oc" data-html data-en="Valentine&#39;s&lt;em&gt;San Valentín&lt;/em&gt;" data-es="San Valentín&lt;em&gt;Valentine&#39;s&lt;/em&gt;">Valentine's<em>San Valentín</em></span>
+          <p data-en="Flowers, tablescapes and the small installations people order for someone else." data-es="Flores, mesas y las instalaciones pequeñas que se piden para alguien más.">Flowers, tablescapes and the small installations people order for someone else.</p>
+        </div>
+        <div class="cal-cell">
+          <span class="mo" data-en="March to April" data-es="Marzo a abril">March to April</span>
+          <span class="oc" data-html data-en="Spring&lt;em&gt;Primavera&lt;/em&gt;" data-es="Primavera&lt;em&gt;Spring&lt;/em&gt;">Spring<em>Primavera</em></span>
+          <p data-en="The seasonal refresh. Entry tables, mantels and consoles come out of winter." data-es="El cambio de temporada. Recibidores, chimeneas y consolas salen del invierno.">The seasonal refresh. Entry tables, mantels and consoles come out of winter.</p>
+        </div>
+        <div class="cal-cell">
+          <span class="mo" data-en="May" data-es="Mayo">May</span>
+          <span class="oc" data-html data-en="Mother&#39;s Day&lt;em&gt;Día de las Madres&lt;/em&gt;" data-es="Día de las Madres&lt;em&gt;Mother&#39;s Day&lt;/em&gt;">Mother's Day<em>Día de las Madres</em></span>
+          <p data-en="Florals and home installations, usually ordered by someone who wants to arrive with more than a card." data-es="Flores e instalaciones en casa, normalmente de alguien que quiere llegar con algo más que una tarjeta.">Florals and home installations, usually ordered by someone who wants to arrive with more than a card.</p>
+        </div>
+        <div class="cal-cell">
+          <span class="mo" data-en="May to June" data-es="Mayo a junio">May to June</span>
+          <span class="oc" data-html data-en="Graduations&lt;em&gt;Graduaciones&lt;/em&gt;" data-es="Graduaciones&lt;em&gt;Graduations&lt;/em&gt;">Graduations<em>Graduaciones</em></span>
+          <p data-en="Party and backdrop decor in school colors, at home or at the venue." data-es="Decoración y fondos en los colores del colegio, en casa o en el salón.">Party and backdrop decor in school colors, at home or at the venue.</p>
+        </div>
+        <div class="cal-cell">
+          <span class="mo" data-en="July" data-es="Julio">July</span>
+          <span class="oc" data-html data-en="Fourth of July&lt;em&gt;Cuatro de Julio&lt;/em&gt;" data-es="Cuatro de Julio&lt;em&gt;Fourth of July&lt;/em&gt;">Fourth of July<em>Cuatro de Julio</em></span>
+          <p data-en="Red, white and blue, for the house and for the businesses that decorate for it." data-es="Rojo, blanco y azul, para la casa y para los negocios que lo celebran.">Red, white and blue, for the house and for the businesses that decorate for it.</p>
+        </div>
+        <div class="cal-cell peak">
+          <a href="christmas-tree-decorating-miami/">
+            <span class="mo" data-en="August to December, booking now" data-es="Agosto a diciembre, reservando ahora">August to December, booking now</span>
+            <span class="oc" data-html data-en="Christmas&lt;em&gt;Navidad&lt;/em&gt;" data-es="Navidad&lt;em&gt;Christmas&lt;/em&gt;">Christmas<em>Navidad</em></span>
+            <p data-en="The big one. Trees, garlands, staircases and lobbies, designed and installed. Five months of the year, and it fills from the front." data-es="La grande. Árboles, guirnaldas, escaleras y lobbies, diseñados e instalados. Cinco meses del año, y se llena desde el principio.">The big one. Trees, garlands, staircases and lobbies, designed and installed. Five months of the year, and it fills from the front.</p>
+          </a>
+        </div>
+      </div>
+      <div class="cal-foot">
+        <b data-en="And all twelve months:" data-es="Y los doce meses:">And all twelve months:</b>
+        <span data-en="plants and greenery for lobbies, offices, hotels and homes, which is the work that does not have a season." data-es="plantas y verde para lobbies, oficinas, hoteles y casas, que es el trabajo que no tiene temporada.">plants and greenery for lobbies, offices, hotels and homes, which is the work that does not have a season.</span>
+      </div>
     </div>
   </div>
 </section>
@@ -239,65 +294,73 @@
 <section id="services" class="bg-cream2">
   <div class="wrap">
     <div class="sec-head">
-      <p class="chapter" data-en="01 / What we do" data-es="01 / Lo que hacemos">01 / What we do</p>
+      <p class="chapter" data-en="02 / What we do" data-es="02 / Lo que hacemos">02 / What we do</p>
       <h2>
-        <span data-en="Three things, done properly" data-es="Tres cosas, hechas bien">Three things, done properly</span>
-        <span class="sub-es" data-en="Tres cosas, hechas bien" data-es="Three things, done properly">Tres cosas, hechas bien</span>
+        <span data-en="Six things, done properly" data-es="Seis cosas, hechas bien">Six things, done properly</span>
+        <span class="sub-es" data-en="Seis cosas, hechas bien" data-es="Six things, done properly">Seis cosas, hechas bien</span>
       </h2>
-      <p class="lede" data-en="Christmas is the season everything else orbits. These are the three that fill the calendar first."
-                      data-es="Navidad es la temporada alrededor de la que gira todo lo demás. Estas tres son las que llenan el calendario primero.">
-        Christmas is the season everything else orbits. These are the three that fill the calendar first.
+      <p class="lede" data-en="Christmas leads because Christmas pays for the year. The other five are not filler, they are what keeps a house and a lobby looking cared for in March."
+                      data-es="Navidad va primero porque Navidad paga el año. Las otras cinco no son relleno, son lo que mantiene una casa y un lobby cuidados en marzo.">
+        Christmas leads because Christmas pays for the year. The other five are not filler, they are what keeps a house and a lobby looking cared for in March.
       </p>
     </div>
 
-    <div class="cards">
-      <a class="card" href="christmas-tree-decorating-miami/">
-        <div class="card-img">
-          <img src="assets/tree-gold-beige-green-sm.webp" srcset="assets/tree-gold-beige-green-sm.webp 420w, assets/tree-gold-beige-green-md.webp 720w" sizes="(max-width:640px) 46vw, 30vw" width="720" height="900" loading="lazy" decoding="async" alt="Gold, beige and green Christmas tree decorated in a Miami home">
-          <span class="card-badge"><i class="fa-solid fa-holly-berry" aria-hidden="true"></i></span>
-        </div>
-        <div class="card-body">
-          <h3 data-en="Christmas tree design and installation" data-es="Diseño e instalación de árboles">Christmas tree design and installation</h3>
-          <p data-en="Your tree, built in layers: ribbon first, then florals, then picks, then the pieces that catch the light. Finished in one visit."
-             data-es="Tu árbol, armado por capas: primero las cintas, luego las flores, los picks y las piezas que atrapan la luz. Terminado en una sola visita.">Your tree, built in layers: ribbon first, then florals, then picks, then the pieces that catch the light. Finished in one visit.</p>
-          <span class="card-more" data-en="See how it works" data-es="Ver cómo funciona">See how it works<i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></span>
+    <div class="svc">
+      <div class="lead">
+        <a href="christmas-tree-decorating-miami/">
+          <div class="fig"><img src="assets/tree-red-gold-living-room-day-md.webp" srcset="assets/tree-red-gold-living-room-day-sm.webp 420w, assets/tree-red-gold-living-room-day-md.webp 720w, assets/tree-red-gold-living-room-day-lg.webp 750w" sizes="(max-width:640px) 92vw, 62vw" width="750" height="828" loading="lazy" decoding="async" alt="Red and gold Christmas tree designed and installed in a Miami living room"></div>
+          <div class="cap">
+            <h3 data-en="Christmas tree design and installation" data-es="Diseño e instalación de árboles de Navidad">Christmas tree design and installation</h3>
+            <p data-en="The color story first, then the tree built in layers in your own room. Ribbon, florals, picks, topper, base. Finished in one visit." data-es="Primero la paleta, luego el árbol armado por capas en tu propio espacio. Cintas, flores, picks, punta y base. Terminado en una sola visita.">The color story first, then the tree built in layers in your own room. Ribbon, florals, picks, topper, base. Finished in one visit.</p>
+            <span data-en="See how a tree gets built" data-es="Ver cómo se arma un árbol">See how a tree gets built</span>
+          </div>
+        </a>
+      </div>
+
+      <a href="holiday-home-decorating-miami/">
+        <div class="fig"><img src="assets/detail-white-gold-magnolia-sm.webp" srcset="assets/detail-white-gold-magnolia-sm.webp 420w, assets/detail-white-gold-magnolia-md.webp 720w" sizes="(max-width:640px) 92vw, 30vw" width="720" height="882" loading="lazy" decoding="async" alt="Gold magnolias and a large sage bauble, the floral work used across seasonal installations"></div>
+        <div class="cap">
+          <h3 data-en="Seasonal and holiday decorating" data-es="Decoración de temporada y fiestas">Seasonal and holiday decorating</h3>
+          <p data-en="Valentine&#39;s, spring, Mother&#39;s Day, graduations, the Fourth. Every occasion on the calendar." data-es="San Valentín, primavera, Día de las Madres, graduaciones, el Cuatro de Julio. Cada ocasión del calendario.">Valentine's, spring, Mother's Day, graduations, the Fourth. Every occasion on the calendar.</p>
+          <span data-en="See seasonal work" data-es="Ver trabajo de temporada">See seasonal work</span>
         </div>
       </a>
 
-      <a class="card" href="commercial-christmas-decorating-miami/">
-        <div class="card-img">
-          <img src="assets/commercial-lobby-red-tree-sm.webp" srcset="assets/commercial-lobby-red-tree-sm.webp 420w, assets/commercial-lobby-red-tree-md.webp 720w" sizes="(max-width:640px) 46vw, 30vw" width="720" height="960" loading="lazy" decoding="async" alt="Large red and green Christmas display with a life size nutcracker in a Miami commercial lobby">
-          <span class="card-badge"><i class="fa-solid fa-hotel" aria-hidden="true"></i></span>
-        </div>
-        <div class="card-body">
-          <h3 data-en="Commercial and lobby displays" data-es="Montajes comerciales y lobbies">Commercial and lobby displays</h3>
-          <p data-en="Offices, building lobbies, hotels and storefronts. Oversized trees and props built to read from across a lobby, installed outside business hours."
-             data-es="Oficinas, lobbies, hoteles y locales. Árboles y props a gran escala que se leen desde el otro lado del lobby, instalados fuera del horario laboral.">Offices, building lobbies, hotels and storefronts. Oversized trees and props built to read from across a lobby, installed outside business hours.</p>
-          <span class="card-more" data-en="See commercial work" data-es="Ver trabajo comercial">See commercial work<i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></span>
+      <a href="office-plant-and-lobby-decor-miami/">
+        <div class="fig"><img src="assets/commercial-lobby-plants-sm.webp" srcset="assets/commercial-lobby-plants-sm.webp 420w, assets/commercial-lobby-plants-md.webp 720w" sizes="(max-width:640px) 92vw, 30vw" width="720" height="1280" loading="lazy" decoding="async" alt="Tall planted greenery lining a modern Miami office lobby"></div>
+        <div class="cap">
+          <h3 data-en="Plants and greenery, all year" data-es="Plantas y verde, todo el año">Plants and greenery, all year</h3>
+          <p data-en="Lobbies, offices, hotels and homes styled with real and faux greenery. The work with no season." data-es="Lobbies, oficinas, hoteles y casas con verde natural y artificial. El trabajo que no tiene temporada.">Lobbies, offices, hotels and homes styled with real and faux greenery. The work with no season.</p>
+          <span data-en="See the greenery work" data-es="Ver el trabajo con plantas">See the greenery work</span>
         </div>
       </a>
 
-      <a class="card" href="garland-and-staircase-decorating-miami/">
-        <div class="card-img">
-          <img src="assets/staircase-gold-garland-alt-sm.webp" srcset="assets/staircase-gold-garland-alt-sm.webp 420w, assets/staircase-gold-garland-alt-md.webp 720w" sizes="(max-width:640px) 46vw, 30vw" width="720" height="720" loading="lazy" decoding="async" alt="Gold garland wrapped down a modern staircase railing in a Miami home">
-          <span class="card-badge"><i class="fa-solid fa-stairs" aria-hidden="true"></i></span>
-        </div>
-        <div class="card-body">
+      <a href="garland-and-staircase-decorating-miami/">
+        <div class="fig"><img src="assets/staircase-gold-garland-sm.webp" srcset="assets/staircase-gold-garland-sm.webp 420w, assets/staircase-gold-garland-md.webp 720w" sizes="(max-width:640px) 92vw, 30vw" width="720" height="720" loading="lazy" decoding="async" alt="Gold garland running down a modern staircase railing in a Miami home"></div>
+        <div class="cap">
           <h3 data-en="Garlands, staircases and mantels" data-es="Guirnaldas, escaleras y chimeneas">Garlands, staircases and mantels</h3>
-          <p data-en="The parts of the house that make the tree look deliberate. Railings, banisters, mantels, doorways and the entry table people see first."
-             data-es="Las partes de la casa que hacen que el árbol se vea intencional. Barandas, escaleras, chimeneas, entradas y la consola que todos ven primero.">The parts of the house that make the tree look deliberate. Railings, banisters, mantels, doorways and the entry table people see first.</p>
-          <span class="card-more" data-en="See garland work" data-es="Ver guirnaldas">See garland work<i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></span>
+          <p data-en="The railing is seen from both floors and the front door at once. It earns more than any single room." data-es="La baranda se ve desde los dos pisos y desde la entrada a la vez. Rinde más que cualquier habitación.">The railing is seen from both floors and the front door at once. It earns more than any single room.</p>
+          <span data-en="See garland work" data-es="Ver guirnaldas">See garland work</span>
         </div>
       </a>
-    </div>
 
-    <div class="also">
-      <span data-en="Also on the calendar:" data-es="También en el calendario:">Also on the calendar:</span>
-      <a href="christmas-tree-color-themes/"><i class="fa-solid fa-palette" aria-hidden="true"></i><span data-en="Color stories" data-es="Paletas de color">Color stories</span></a>
-      <a href="holiday-home-decorating-miami/"><i class="fa-solid fa-couch" aria-hidden="true"></i><span data-en="Seasonal home decor" data-es="Decoración de temporada">Seasonal home decor</span></a>
-      <a href="office-plant-and-lobby-decor-miami/"><i class="fa-solid fa-seedling" aria-hidden="true"></i><span data-en="Plants and greenery" data-es="Plantas y verde">Plants and greenery</span></a>
-      <a href="christmas-tree-decorating-cost-miami/"><i class="fa-solid fa-tags" aria-hidden="true"></i><span data-en="What it costs" data-es="Cuánto cuesta">What it costs</span></a>
-      <a href="christmas-tree-installation-and-takedown-miami/"><i class="fa-solid fa-truck-ramp-box" aria-hidden="true"></i><span data-en="Setup and takedown" data-es="Montaje y desmontaje">Setup and takedown</span></a>
+      <a href="commercial-christmas-decorating-miami/">
+        <div class="fig"><img src="assets/commercial-lobby-red-tree-sm.webp" srcset="assets/commercial-lobby-red-tree-sm.webp 420w, assets/commercial-lobby-red-tree-md.webp 720w" sizes="(max-width:640px) 92vw, 30vw" width="720" height="960" loading="lazy" decoding="async" alt="Large Christmas display with a life size nutcracker in a Miami commercial lobby"></div>
+        <div class="cap">
+          <h3 data-en="Commercial and lobby displays" data-es="Montajes comerciales y lobbies">Commercial and lobby displays</h3>
+          <p data-en="Built to read from across a lobby, installed outside your business hours, quoted after a walkthrough." data-es="Pensados para verse desde el otro lado del lobby, instalados fuera de tu horario, cotizados tras una visita.">Built to read from across a lobby, installed outside your business hours, quoted after a walkthrough.</p>
+          <span data-en="See commercial work" data-es="Ver trabajo comercial">See commercial work</span>
+        </div>
+      </a>
+
+      <a href="christmas-tree-installation-and-takedown-miami/">
+        <div class="fig"><img src="assets/process-installing-teal-tree-sm.webp" srcset="assets/process-installing-teal-tree-sm.webp 420w, assets/process-installing-teal-tree-md.webp 720w" sizes="(max-width:640px) 92vw, 30vw" width="720" height="960" loading="lazy" decoding="async" alt="A Rose Art and Decor designer installing a teal and silver Christmas tree"></div>
+        <div class="cap">
+          <h3 data-en="Setup and takedown" data-es="Montaje y desmontaje">Setup and takedown</h3>
+          <p data-en="We build it in place and we come back for it, priced now instead of becoming a January problem." data-es="Lo armamos ahí mismo y volvemos por él, cotizado ahora en vez de convertirse en un problema de enero.">We build it in place and we come back for it, priced now instead of becoming a January problem.</p>
+          <span data-en="See how install day works" data-es="Ver cómo es el día de instalación">See how install day works</span>
+        </div>
+      </a>
     </div>
   </div>
 </section>
@@ -306,67 +369,66 @@
 <section id="work">
   <div class="wrap">
     <div class="sec-head">
-      <p class="chapter" data-en="02 / Six seasons of trees" data-es="02 / Seis temporadas de árboles">02 / Six seasons of trees</p>
+      <p class="chapter" data-en="03 / The work" data-es="03 / El trabajo">03 / The work</p>
       <h2>
         <span data-en="Find yours, then we build it" data-es="Encuentra el tuyo y lo armamos">Find yours, then we build it</span>
         <span class="sub-es" data-en="Encuentra el tuyo y lo armamos" data-es="Find yours, then we build it">Encuentra el tuyo y lo armamos</span>
       </h2>
-      <p class="lede" data-en="Real trees in real Miami homes and lobbies, no staging and no stock photography. Filter by color story. Most people know their answer the second they see it."
-                      data-es="Árboles reales en casas y lobbies reales de Miami, sin montajes ni fotos de banco. Filtra por paleta. Casi todos saben cuál es la suya apenas la ven.">
-        Real trees in real Miami homes and lobbies, no staging and no stock photography. Filter by color story. Most people know their answer the second they see it.
+      <p class="lede" data-en="Real trees in real Miami homes and lobbies, no staging and no stock photography. Pick the color story that is already yours, and that is most of the decision made."
+                      data-es="Árboles reales en casas y lobbies reales de Miami, sin montajes ni fotos de banco. Elige la paleta que ya es tuya, y con eso casi toda la decisión está hecha.">
+        Real trees in real Miami homes and lobbies, no staging and no stock photography. Pick the color story that is already yours, and that is most of the decision made.
       </p>
     </div>
   </div>
 
-  <div class="bleed">
-    <div class="wrap">
-      <div class="filters" role="group" aria-label="Filter the gallery by color story">
-        <button type="button" data-filter="all" aria-pressed="true" data-en="Everything" data-es="Todo">Everything</button>
-        <button type="button" data-filter="red-gold" aria-pressed="false" data-en="Red and gold" data-es="Rojo y dorado">Red and gold</button>
-        <button type="button" data-filter="white-gold" aria-pressed="false" data-en="White and gold" data-es="Blanco y dorado">White and gold</button>
-        <button type="button" data-filter="blue-silver" aria-pressed="false" data-en="Blue and silver" data-es="Azul y plata">Blue and silver</button>
-        <button type="button" data-filter="green-champagne" aria-pressed="false" data-en="Green and champagne" data-es="Verde y champán">Green and champagne</button>
-        <button type="button" data-filter="whimsical" aria-pressed="false" data-en="For the kids" data-es="Para los niños">For the kids</button>
-        <button type="button" data-filter="commercial" aria-pressed="false" data-en="Commercial" data-es="Comercial">Commercial</button>
-      </div>
+  <div class="wrap">
+    <div class="work-grid" id="gallery">
+      <figure>
+        <img src="assets/tree-red-gold-living-room-day-sm.webp" srcset="assets/tree-red-gold-living-room-day-sm.webp 420w, assets/tree-red-gold-living-room-day-md.webp 720w" sizes="(max-width:940px) 48vw, 24vw" data-full="assets/tree-red-gold-living-room-day-lg.webp" width="720" height="960" loading="lazy" decoding="async" alt="Red and gold Christmas tree designed by Rose Art and Decor in a Miami living room">
+        <figcaption data-en="Red and gold" data-es="Rojo y dorado">Red and gold</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/tree-white-gold-fireplace-sm.webp" srcset="assets/tree-white-gold-fireplace-sm.webp 420w, assets/tree-white-gold-fireplace-md.webp 720w" sizes="(max-width:940px) 48vw, 24vw" data-full="assets/tree-white-gold-fireplace-lg.webp" width="720" height="960" loading="lazy" decoding="async" alt="White and gold Christmas tree with magnolias beside a lit fireplace in Miami">
+        <figcaption data-en="White and gold" data-es="Blanco y dorado">White and gold</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/tree-blue-silver-sm.webp" srcset="assets/tree-blue-silver-sm.webp 420w, assets/tree-blue-silver-md.webp 720w" sizes="(max-width:940px) 48vw, 24vw" data-full="assets/tree-blue-silver-lg.webp" width="720" height="960" loading="lazy" decoding="async" alt="Blue and silver Christmas tree in a white Miami room">
+        <figcaption data-en="Blue and silver" data-es="Azul y plata">Blue and silver</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/tree-gold-beige-green-sm.webp" srcset="assets/tree-gold-beige-green-sm.webp 420w, assets/tree-gold-beige-green-md.webp 720w" sizes="(max-width:940px) 48vw, 24vw" data-full="assets/tree-gold-beige-green-lg.webp" width="720" height="960" loading="lazy" decoding="async" alt="Gold, beige and green Christmas tree in a bright Miami home">
+        <figcaption data-en="Green and champagne" data-es="Verde y champán">Green and champagne</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/tree-nutcracker-red-sm.webp" srcset="assets/tree-nutcracker-red-sm.webp 420w, assets/tree-nutcracker-red-md.webp 720w" sizes="(max-width:940px) 48vw, 24vw" data-full="assets/tree-nutcracker-red-lg.webp" width="720" height="960" loading="lazy" decoding="async" alt="Red nutcracker themed Christmas tree with drums and oversized baubles">
+        <figcaption data-en="The Nutcracker" data-es="El Cascanueces">The Nutcracker</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/tree-gingerbread-candy-sm.webp" srcset="assets/tree-gingerbread-candy-sm.webp 420w, assets/tree-gingerbread-candy-md.webp 720w" sizes="(max-width:940px) 48vw, 24vw" data-full="assets/tree-gingerbread-candy-lg.webp" width="720" height="960" loading="lazy" decoding="async" alt="Gingerbread and candy cane themed Christmas tree with houses at the base">
+        <figcaption data-en="Gingerbread, for the kids" data-es="Gingerbread, para los niños">Gingerbread, for the kids</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/staircase-gold-garland-sm.webp" srcset="assets/staircase-gold-garland-sm.webp 420w, assets/staircase-gold-garland-md.webp 720w" sizes="(max-width:940px) 48vw, 24vw" data-full="assets/staircase-gold-garland-lg.webp" width="720" height="960" loading="lazy" decoding="async" alt="Gold garland running down a staircase railing beside a flocked tree">
+        <figcaption data-en="Staircases and garlands" data-es="Escaleras y guirnaldas">Staircases and garlands</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/commercial-lobby-red-tree-sm.webp" srcset="assets/commercial-lobby-red-tree-sm.webp 420w, assets/commercial-lobby-red-tree-md.webp 720w" sizes="(max-width:940px) 48vw, 24vw" data-full="assets/commercial-lobby-red-tree-lg.webp" width="720" height="960" loading="lazy" decoding="async" alt="Large Christmas display with a life size nutcracker in a Miami commercial lobby">
+        <figcaption data-en="Lobbies and offices" data-es="Lobbies y oficinas">Lobbies and offices</figcaption>
+      </figure>
     </div>
-
-    <div class="gallery" id="gallery">
-      <figure data-tags="red-gold"><img src="assets/tree-red-gold-living-room-day-sm.webp" srcset="assets/tree-red-gold-living-room-day-sm.webp 420w, assets/tree-red-gold-living-room-day-md.webp 720w" sizes="(max-width:430px) 46vw, (max-width:940px) 46vw, 24vw" data-full="assets/tree-red-gold-living-room-day-lg.webp" width="720" height="795" loading="lazy" decoding="async" alt="Red and gold Christmas tree in a sunlit Miami living room"><figcaption data-en="Red and gold, living room, by day" data-es="Rojo y dorado, sala, de día">Red and gold, living room, by day</figcaption></figure>
-      <figure data-tags="red-gold"><img src="assets/tree-red-gold-living-room-night-sm.webp" srcset="assets/tree-red-gold-living-room-night-sm.webp 420w, assets/tree-red-gold-living-room-night-md.webp 720w" sizes="(max-width:430px) 46vw, (max-width:940px) 46vw, 24vw" data-full="assets/tree-red-gold-living-room-night-lg.webp" width="720" height="795" loading="lazy" decoding="async" alt="The same red and gold tree lit at night beside a fireplace"><figcaption data-en="The same tree after dark" data-es="El mismo árbol de noche">The same tree after dark</figcaption></figure>
-      <figure data-tags="white-gold"><img src="assets/tree-white-gold-fireplace-sm.webp" srcset="assets/tree-white-gold-fireplace-sm.webp 420w, assets/tree-white-gold-fireplace-md.webp 720w" sizes="(max-width:430px) 46vw, (max-width:940px) 46vw, 24vw" data-full="assets/tree-white-gold-fireplace-lg.webp" width="720" height="882" loading="lazy" decoding="async" alt="White and gold Christmas tree with magnolia blooms beside a fireplace"><figcaption data-en="White and gold with magnolias" data-es="Blanco y dorado con magnolias">White and gold with magnolias</figcaption></figure>
-      <figure data-tags="blue-silver"><img src="assets/tree-white-blue-polar-sm.webp" srcset="assets/tree-white-blue-polar-sm.webp 420w, assets/tree-white-blue-polar-md.webp 720w" sizes="(max-width:430px) 46vw, (max-width:940px) 46vw, 24vw" data-full="assets/tree-white-blue-polar-lg.webp" width="720" height="960" loading="lazy" decoding="async" alt="Flocked white tree with icy blue ornaments and polar bear figures"><figcaption data-en="Arctic blue with polar bears" data-es="Azul ártico con osos polares">Arctic blue with polar bears</figcaption></figure>
-      <figure data-tags="red-gold"><img src="assets/tree-nutcracker-red-sm.webp" srcset="assets/tree-nutcracker-red-sm.webp 420w, assets/tree-nutcracker-red-md.webp 720w" sizes="(max-width:430px) 46vw, (max-width:940px) 46vw, 24vw" data-full="assets/tree-nutcracker-red-lg.webp" width="720" height="881" loading="lazy" decoding="async" alt="Red nutcracker themed Christmas tree with drums and oversized baubles"><figcaption data-en="The Nutcracker" data-es="El Cascanueces">The Nutcracker</figcaption></figure>
-      <figure data-tags="green-champagne"><img src="assets/tree-gold-beige-green-sm.webp" srcset="assets/tree-gold-beige-green-sm.webp 420w, assets/tree-gold-beige-green-md.webp 720w" sizes="(max-width:430px) 46vw, (max-width:940px) 46vw, 24vw" data-full="assets/tree-gold-beige-green-lg.webp" width="720" height="900" loading="lazy" decoding="async" alt="Gold, beige and green Christmas tree in a bright Miami room"><figcaption data-en="Gold, beige and green" data-es="Dorado, beige y verde">Gold, beige and green</figcaption></figure>
-      <figure data-tags="blue-silver"><img src="assets/tree-blue-silver-sm.webp" srcset="assets/tree-blue-silver-sm.webp 420w, assets/tree-blue-silver-md.webp 720w" sizes="(max-width:430px) 46vw, (max-width:940px) 46vw, 24vw" data-full="assets/tree-blue-silver-lg.webp" width="720" height="1280" loading="lazy" decoding="async" alt="Blue and silver Christmas tree in a white Miami room"><figcaption data-en="Blue and silver" data-es="Azul y plata">Blue and silver</figcaption></figure>
-      <figure data-tags="commercial"><img src="assets/commercial-lobby-red-tree-sm.webp" srcset="assets/commercial-lobby-red-tree-sm.webp 420w, assets/commercial-lobby-red-tree-md.webp 720w" sizes="(max-width:430px) 46vw, (max-width:940px) 46vw, 24vw" data-full="assets/commercial-lobby-red-tree-lg.webp" width="720" height="960" loading="lazy" decoding="async" alt="Commercial lobby Christmas display with a life size nutcracker"><figcaption data-en="Lobby display with a life size nutcracker" data-es="Lobby con cascanueces a tamaño real">Lobby display with a life size nutcracker</figcaption></figure>
-      <figure data-tags="white-gold"><img src="assets/staircase-gold-garland-sm.webp" srcset="assets/staircase-gold-garland-sm.webp 420w, assets/staircase-gold-garland-md.webp 720w" sizes="(max-width:430px) 46vw, (max-width:940px) 46vw, 24vw" data-full="assets/staircase-gold-garland-lg.webp" width="720" height="720" loading="lazy" decoding="async" alt="Gold garland along a staircase railing next to a flocked tree"><figcaption data-en="Staircase garland in gold" data-es="Guirnalda dorada en la escalera">Staircase garland in gold</figcaption></figure>
-      <figure data-tags="red-gold"><img src="assets/detail-red-gold-poinsettia-sm.webp" srcset="assets/detail-red-gold-poinsettia-sm.webp 420w, assets/detail-red-gold-poinsettia-md.webp 720w" sizes="(max-width:430px) 46vw, (max-width:940px) 46vw, 24vw" data-full="assets/detail-red-gold-poinsettia-lg.webp" width="720" height="960" loading="lazy" decoding="async" alt="Close up of red poinsettias and gold baubles on a decorated tree"><figcaption data-en="Poinsettia and glass, layered" data-es="Poinsettia y cristal, en capas">Poinsettia and glass, layered</figcaption></figure>
-      <figure data-tags="white-gold"><img src="assets/detail-white-gold-dove-sm.webp" srcset="assets/detail-white-gold-dove-sm.webp 420w, assets/detail-white-gold-dove-md.webp 720w" sizes="(max-width:430px) 46vw, (max-width:940px) 46vw, 24vw" data-full="assets/detail-white-gold-dove-lg.webp" width="720" height="882" loading="lazy" decoding="async" alt="White dove ornament tucked among gold magnolias"><figcaption data-en="Doves in the branches" data-es="Palomas entre las ramas">Doves in the branches</figcaption></figure>
-      <figure data-tags="blue-silver"><img src="assets/detail-polar-bear-teal-sm.webp" srcset="assets/detail-polar-bear-teal-sm.webp 420w, assets/detail-polar-bear-teal-md.webp 720w" sizes="(max-width:430px) 46vw, (max-width:940px) 46vw, 24vw" data-full="assets/detail-polar-bear-teal-lg.webp" width="720" height="960" loading="lazy" decoding="async" alt="Polar bear ornament resting on teal and silver baubles"><figcaption data-en="Teal, silver and snow" data-es="Turquesa, plata y nieve">Teal, silver and snow</figcaption></figure>
-      <figure data-tags="green-champagne"><img src="assets/detail-gold-green-ribbon-sm.webp" srcset="assets/detail-gold-green-ribbon-sm.webp 420w, assets/detail-gold-green-ribbon-md.webp 720w" sizes="(max-width:430px) 46vw, (max-width:940px) 46vw, 24vw" data-full="assets/detail-gold-green-ribbon-lg.webp" width="720" height="900" loading="lazy" decoding="async" alt="Sheer gold ribbon woven through green foliage picks on a tree"><figcaption data-en="Ribbon goes on first, always" data-es="La cinta va primero, siempre">Ribbon goes on first, always</figcaption></figure>
-      <figure data-tags="whimsical"><img src="assets/tree-gingerbread-candy-sm.webp" srcset="assets/tree-gingerbread-candy-sm.webp 420w, assets/tree-gingerbread-candy-md.webp 720w" sizes="(max-width:430px) 46vw, (max-width:940px) 46vw, 24vw" data-full="assets/tree-gingerbread-candy-lg.webp" width="720" height="1280" loading="lazy" decoding="async" alt="Gingerbread and candy cane themed tree with little houses at the base"><figcaption data-en="Gingerbread, the one the kids vote for" data-es="Gingerbread, el favorito de los niños">Gingerbread, the one the kids vote for</figcaption></figure>
-      <figure data-tags="red-gold"><img src="assets/tree-red-gold-classic-sm.webp" srcset="assets/tree-red-gold-classic-sm.webp 420w, assets/tree-red-gold-classic-md.webp 720w" sizes="(max-width:430px) 46vw, (max-width:940px) 46vw, 24vw" data-full="assets/tree-red-gold-classic-lg.webp" width="720" height="1280" loading="lazy" decoding="async" alt="Classic red and gold Christmas tree with a velvet tree skirt"><figcaption data-en="Classic red, velvet skirt" data-es="Rojo clásico, falda de terciopelo">Classic red, velvet skirt</figcaption></figure>
-      <figure data-tags="commercial"><img src="assets/commercial-lobby-plants-sm.webp" srcset="assets/commercial-lobby-plants-sm.webp 420w, assets/commercial-lobby-plants-md.webp 720w" sizes="(max-width:430px) 46vw, (max-width:940px) 46vw, 24vw" data-full="assets/commercial-lobby-plants-lg.webp" width="720" height="1280" loading="lazy" decoding="async" alt="Tall planted greenery lining a modern office lobby in Miami"><figcaption data-en="Greenery for a lobby, all year" data-es="Verde para un lobby, todo el año">Greenery for a lobby, all year</figcaption></figure>
-      <figure data-tags="blue-silver"><img src="assets/tree-blue-silver-room-sm.webp" srcset="assets/tree-blue-silver-room-sm.webp 420w, assets/tree-blue-silver-room-md.webp 720w" sizes="(max-width:430px) 46vw, (max-width:940px) 46vw, 24vw" data-full="assets/tree-blue-silver-room-lg.webp" width="720" height="856" loading="lazy" decoding="async" alt="Blue and silver tree glowing in a neutral Miami room"><figcaption data-en="Cobalt and silver" data-es="Cobalto y plata">Cobalt and silver</figcaption></figure>
-      <figure data-tags="white-gold"><img src="assets/staircase-gold-garland-detail-sm.webp" srcset="assets/staircase-gold-garland-detail-sm.webp 420w, assets/staircase-gold-garland-detail-md.webp 720w" sizes="(max-width:430px) 46vw, (max-width:940px) 46vw, 24vw" data-full="assets/staircase-gold-garland-detail-lg.webp" width="720" height="720" loading="lazy" decoding="async" alt="Detail of the gold staircase garland meeting the flocked tree"><figcaption data-en="Where the garland meets the tree" data-es="Donde la guirnalda encuentra el árbol">Where the garland meets the tree</figcaption></figure>
-      <figure data-tags="red-gold"><img src="assets/tree-nutcracker-red-wide-sm.webp" srcset="assets/tree-nutcracker-red-wide-sm.webp 420w, assets/tree-nutcracker-red-wide-md.webp 720w" sizes="(max-width:430px) 46vw, (max-width:940px) 46vw, 24vw" data-full="assets/tree-nutcracker-red-wide-lg.webp" width="720" height="881" loading="lazy" decoding="async" alt="Nutcracker tree seen wide with nutcracker figures standing at the base"><figcaption data-en="Nutcrackers standing guard" data-es="Cascanueces montando guardia">Nutcrackers standing guard</figcaption></figure>
-      <figure data-tags="green-champagne"><img src="assets/detail-blush-ornament-sm.webp" srcset="assets/detail-blush-ornament-sm.webp 420w, assets/detail-blush-ornament-md.webp 720w" sizes="(max-width:430px) 46vw, (max-width:940px) 46vw, 24vw" data-full="assets/detail-blush-ornament-lg.webp" width="720" height="900" loading="lazy" decoding="async" alt="Oversized blush ornament with sage ribbon and a crystal snowflake"><figcaption data-en="One oversized piece anchors a section" data-es="Una pieza grande ancla toda una sección">One oversized piece anchors a section</figcaption></figure>
-      <figure data-tags="white-gold"><img src="assets/detail-white-gold-magnolia-sm.webp" srcset="assets/detail-white-gold-magnolia-sm.webp 420w, assets/detail-white-gold-magnolia-md.webp 720w" sizes="(max-width:430px) 46vw, (max-width:940px) 46vw, 24vw" data-full="assets/detail-white-gold-magnolia-lg.webp" width="720" height="882" loading="lazy" decoding="async" alt="Gold magnolias and a large sage bauble on a white Christmas tree"><figcaption data-en="Magnolia, sage, champagne" data-es="Magnolia, salvia, champán">Magnolia, sage, champagne</figcaption></figure>
-      <figure data-tags="red-gold"><img src="assets/detail-red-gold-ribbon-sm.webp" srcset="assets/detail-red-gold-ribbon-sm.webp 420w, assets/detail-red-gold-ribbon-md.webp 720w" sizes="(max-width:430px) 46vw, (max-width:940px) 46vw, 24vw" data-full="assets/detail-red-gold-ribbon-lg.webp" width="720" height="960" loading="lazy" decoding="async" alt="Deep red velvet ribbon and gold baubles photographed close up"><figcaption data-en="Velvet ribbon, gold glass" data-es="Cinta de terciopelo, cristal dorado">Velvet ribbon, gold glass</figcaption></figure>
-      <figure data-tags="blue-silver"><img src="assets/detail-polar-bear-snow-sm.webp" srcset="assets/detail-polar-bear-snow-sm.webp 420w, assets/detail-polar-bear-snow-md.webp 720w" sizes="(max-width:430px) 46vw, (max-width:940px) 46vw, 24vw" data-full="assets/detail-polar-bear-snow-lg.webp" width="720" height="960" loading="lazy" decoding="async" alt="Polar bear figure on faux snow beneath a blue and silver tree"><figcaption data-en="The base is part of the design" data-es="La base también es parte del diseño">The base is part of the design</figcaption></figure>
-      <figure data-tags="green-champagne"><img src="assets/detail-gold-green-cluster-sm.webp" srcset="assets/detail-gold-green-cluster-sm.webp 420w, assets/detail-gold-green-cluster-md.webp 720w" sizes="(max-width:430px) 46vw, (max-width:940px) 46vw, 24vw" data-full="assets/detail-gold-green-cluster-lg.webp" width="720" height="900" loading="lazy" decoding="async" alt="Cluster of gold and green ornaments with sheer ribbon on a tree"><figcaption data-en="Clustered, never scattered" data-es="En racimos, nunca disperso">Clustered, never scattered</figcaption></figure>
-      <figure data-tags="red-gold"><img src="assets/tree-nutcracker-red-alt-sm.webp" srcset="assets/tree-nutcracker-red-alt-sm.webp 420w, assets/tree-nutcracker-red-alt-md.webp 720w" sizes="(max-width:430px) 46vw, (max-width:940px) 46vw, 24vw" data-full="assets/tree-nutcracker-red-alt-lg.webp" width="720" height="881" loading="lazy" decoding="async" alt="Nutcracker tree from another angle with drum ornaments and red ribbon"><figcaption data-en="Drums, ribbon and a lot of red" data-es="Tambores, cintas y mucho rojo">Drums, ribbon and a lot of red</figcaption></figure>
-      <figure data-tags="white-gold"><img src="assets/staircase-gold-garland-alt-sm.webp" srcset="assets/staircase-gold-garland-alt-sm.webp 420w, assets/staircase-gold-garland-alt-md.webp 720w" sizes="(max-width:430px) 46vw, (max-width:940px) 46vw, 24vw" data-full="assets/staircase-gold-garland-alt-lg.webp" width="720" height="720" loading="lazy" decoding="async" alt="Full view of the gold staircase garland and matching flocked tree"><figcaption data-en="Tree and staircase, designed together" data-es="Árbol y escalera, diseñados juntos">Tree and staircase, designed together</figcaption></figure>
-    </div>
+    <p class="work-foot">
+      <span data-en="Eight of the colour stories she comes back to." data-es="Ocho de las paletas a las que siempre vuelve.">Eight of the colour stories she comes back to.</span>
+      <a href="christmas-tree-color-themes/" data-en="What each palette does to a room" data-es="Qué le hace cada paleta a un espacio">What each palette does to a room</a>
+      <a href="https://www.instagram.com/roseartanddecor/" target="_blank" rel="noopener" data-en="Six seasons of the rest on Instagram" data-es="Seis temporadas más en Instagram">Six seasons of the rest on Instagram</a>
+    </p>
   </div>
 </section>
 
 <div class="lb" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
-  <button class="lb-close" id="lbClose" aria-label="Close"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
-  <button class="lb-prev" id="lbPrev" aria-label="Previous"><i class="fa-solid fa-angle-left" aria-hidden="true"></i></button>
+  <button class="lb-close" id="lbClose" aria-label="Close">X</button>
+  <button class="lb-prev" id="lbPrev" aria-label="Previous">&lt;</button>
   <img id="lbImg" src="" alt="">
-  <button class="lb-next" id="lbNext" aria-label="Next"><i class="fa-solid fa-angle-right" aria-hidden="true"></i></button>
+  <button class="lb-next" id="lbNext" aria-label="Next">&gt;</button>
   <div class="lb-cap" id="lbCap"></div>
 </div>
 
@@ -374,7 +436,7 @@
 <section id="process" class="bg-pine">
   <div class="wrap">
     <div class="sec-head">
-      <p class="chapter" data-en="03 / How it works" data-es="03 / Cómo funciona">03 / How it works</p>
+      <p class="chapter" data-en="04 / How it works" data-es="04 / Cómo funciona">04 / How it works</p>
       <h2>
         <span data-en="You answer six questions once" data-es="Contestas seis preguntas una sola vez">You answer six questions once</span>
         <span class="sub-es" data-en="Contestas seis preguntas una sola vez" data-es="You answer six questions once">Contestas seis preguntas una sola vez</span>
@@ -433,10 +495,7 @@
         </p>
       </div>
     </div>
-
-    <p class="cmp-hint"><i class="fa-solid fa-arrows-left-right" aria-hidden="true"></i><span data-en="Swipe the table sideways to compare both columns." data-es="Desliza la tabla de lado para comparar las dos columnas.">Swipe the table sideways to compare both columns.</span></p>
-    <div class="cmp-scroll">
-      <table class="cmp">
+    <table class="cmp">
         <thead>
           <tr>
             <th scope="col" data-en="The question" data-es="La pregunta">The question</th>
@@ -447,18 +506,18 @@
         <tbody>
           <tr>
             <th scope="row" data-en="What you provide" data-es="Qué pones tú">What you provide</th>
-            <td data-en="Your ornaments, ribbon, picks and topper. We work with what is in the boxes." data-es="Tus adornos, cintas, picks y punta. Trabajamos con lo que hay en las cajas.">Your ornaments, ribbon, picks and topper. We work with what is in the boxes.</td>
-            <td class="hi" data-en="Nothing. You pick a color story and we handle the shopping." data-es="Nada. Eliges una paleta y nosotras nos encargamos de comprar.">Nothing. You pick a color story and we handle the shopping.</td>
+            <td data-en="Your ornaments, ribbon, picks and topper. We work with what is in the boxes." data-es="Tus adornos, cintas, picks y punta. Trabajamos con lo que hay en las cajas."><span class="cmp-lab" data-en="You already own the decorations" data-es="Ya tienes la decoración">You already own the decorations</span>Your ornaments, ribbon, picks and topper. We work with what is in the boxes.</td>
+            <td class="hi" data-en="Nothing. You pick a color story and we handle the shopping." data-es="Nada. Eliges una paleta y nosotras nos encargamos de comprar."><span class="cmp-lab" data-en="We source everything" data-es="Nosotras compramos todo">We source everything</span>Nothing. You pick a color story and we handle the shopping.</td>
           </tr>
           <tr>
             <th scope="row" data-en="What you pay on top" data-es="Qué pagas adicional">What you pay on top</th>
-            <td data-en="Design and installation only." data-es="Solo diseño e instalación.">Design and installation only.</td>
-            <td class="hi" data-html data-en="&lt;span class='money'&gt;$50 flat&lt;/span&gt;sourcing fee, plus what the materials actually cost. No markup on the materials." data-es="&lt;span class='money'&gt;$50 fijos&lt;/span&gt;por la gestión, más lo que cuesten los materiales. Sin sobreprecio."><span class="money">$50 flat</span>sourcing fee, plus what the materials actually cost. No markup on the materials.</td>
+            <td data-en="Design and installation only." data-es="Solo diseño e instalación."><span class="cmp-lab" data-en="You already own the decorations" data-es="Ya tienes la decoración">You already own the decorations</span>Design and installation only.</td>
+            <td class="hi" data-html data-en="&lt;span class='money'&gt;$50 flat&lt;/span&gt;sourcing fee, plus what the materials actually cost. No markup on the materials." data-es="&lt;span class='money'&gt;$50 fijos&lt;/span&gt;por la gestión, más lo que cuesten los materiales. Sin sobreprecio."><span class="cmp-lab" data-en="We source everything" data-es="Nosotras compramos todo">We source everything</span><span class="money">$50 flat</span>sourcing fee, plus what the materials actually cost. No markup on the materials.</td>
           </tr>
           <tr>
             <th scope="row" data-en="Who keeps the decor" data-es="De quién queda la decoración">Who keeps the decor</th>
-            <td data-en="Yours already." data-es="Ya es tuya.">Yours already.</td>
-            <td class="hi" data-en="Yours, and it comes back out of the box next year." data-es="Tuya, y vuelve a salir de la caja el año que viene.">Yours, and it comes back out of the box next year.</td>
+            <td data-en="Yours already." data-es="Ya es tuya."><span class="cmp-lab" data-en="You already own the decorations" data-es="Ya tienes la decoración">You already own the decorations</span>Yours already.</td>
+            <td class="hi" data-en="Yours, and it comes back out of the box next year." data-es="Tuya, y vuelve a salir de la caja el año que viene."><span class="cmp-lab" data-en="We source everything" data-es="Nosotras compramos todo">We source everything</span>Yours, and it comes back out of the box next year.</td>
           </tr>
           <tr>
             <th scope="row" data-en="What sets the quote" data-es="Qué define la cotización">What sets the quote</th>
@@ -474,7 +533,6 @@
           </tr>
         </tbody>
       </table>
-    </div>
 
     <div class="btn-row">
       <a class="btn btn-primary" href="#quote" data-want="Christmas tree design and installation" data-en="Get my free written quote" data-es="Pedir mi cotización por escrito">Get my free written quote</a>
@@ -490,7 +548,7 @@
       <img src="assets/team-rose-and-crew-md.webp" srcset="assets/team-rose-and-crew-sm.webp 420w, assets/team-rose-and-crew-md.webp 720w, assets/team-rose-and-crew-lg.webp 1000w" sizes="(max-width:940px) 92vw, 46vw" width="720" height="960" loading="lazy" decoding="async" alt="Two members of the Rose Art and Decor team standing beside a finished silver and blue Christmas tree">
     </div>
     <div>
-      <p class="chapter" data-en="04 / Who turns up at your door" data-es="04 / Quién llega a tu puerta">04 / Who turns up at your door</p>
+      <p class="chapter" data-en="05 / Who turns up at your door" data-es="05 / Quién llega a tu puerta">05 / Who turns up at your door</p>
       <h2>
         <span data-en="Rose, Emi and Rebe" data-es="Rose, Emi y Rebe">Rose, Emi and Rebe</span>
         <span class="sub-es" data-en="Rose, Emi y Rebe" data-es="Rose, Emi and Rebe">Rose, Emi y Rebe</span>
@@ -500,14 +558,14 @@
         Rose Art &amp; Decor is Rosangel Cabrera-Neri and two people she trusts with a ladder. Venezuelan by origin, Miami by address, and posting every finished tree since 2020 so you can judge the work before you ever message them.
       </p>
       <ul class="checks">
-        <li><i class="fa-solid fa-diamond" aria-hidden="true"></i><span data-en="The people who design your tree are the people who install it." data-es="Las personas que diseñan tu árbol son las que lo instalan.">The people who design your tree are the people who install it.</span></li>
-        <li><i class="fa-solid fa-diamond" aria-hidden="true"></i><span data-en="Every tree gets its own color story. Last year's design does not get reused on you." data-es="Cada árbol lleva su propia paleta. El diseño del año pasado no se te repite.">Every tree gets its own color story. Last year's design does not get reused on you.</span></li>
-        <li><i class="fa-solid fa-diamond" aria-hidden="true"></i><span data-en="Homes, offices, lobbies, hotels and storefronts, at any tree height." data-es="Casas, oficinas, lobbies, hoteles y locales, con árboles de cualquier altura.">Homes, offices, lobbies, hotels and storefronts, at any tree height.</span></li>
-        <li><i class="fa-solid fa-diamond" aria-hidden="true"></i><span data-en="Whatever you speak at home is what the whole job happens in." data-es="El idioma que hablas en casa es el idioma de todo el trabajo.">Whatever you speak at home is what the whole job happens in.</span></li>
+        <li><span data-en="The people who design your tree are the people who install it." data-es="Las personas que diseñan tu árbol son las que lo instalan.">The people who design your tree are the people who install it.</span></li>
+        <li><span data-en="Every tree gets its own color story. Last year's design does not get reused on you." data-es="Cada árbol lleva su propia paleta. El diseño del año pasado no se te repite.">Every tree gets its own color story. Last year's design does not get reused on you.</span></li>
+        <li><span data-en="Homes, offices, lobbies, hotels and storefronts, at any tree height." data-es="Casas, oficinas, lobbies, hoteles y locales, con árboles de cualquier altura.">Homes, offices, lobbies, hotels and storefronts, at any tree height.</span></li>
+        <li><span data-en="Whatever you speak at home is what the whole job happens in." data-es="El idioma que hablas en casa es el idioma de todo el trabajo.">Whatever you speak at home is what the whole job happens in.</span></li>
       </ul>
       <div class="btn-row">
         <a class="btn btn-ghost" href="https://www.instagram.com/roseartanddecor/" target="_blank" rel="noopener">
-          <i class="fa-brands fa-instagram" aria-hidden="true"></i><span data-en="Six years of trees on Instagram" data-es="Seis años de árboles en Instagram">Six years of trees on Instagram</span>
+          <span data-en="Six years of trees on Instagram" data-es="Seis años de árboles en Instagram">Six years of trees on Instagram</span>
         </a>
       </div>
     </div>
@@ -518,7 +576,7 @@
 <section id="quote" class="bg-cream2">
   <div class="wrap-narrow">
     <div class="sec-head" style="max-width:100%">
-      <p class="chapter" data-en="05 / Your free quote" data-es="05 / Tu cotización gratis">05 / Your free quote</p>
+      <p class="chapter" data-en="06 / Your free quote" data-es="06 / Tu cotización gratis">06 / Your free quote</p>
       <h2>
         <span data-en="Tell us about your tree" data-es="Cuéntanos de tu árbol">Tell us about your tree</span>
         <span class="sub-es" data-en="Cuéntanos de tu árbol" data-es="Tell us about your tree">Cuéntanos de tu árbol</span>
@@ -621,7 +679,7 @@
         <div class="btn-row" style="margin-top:24px">
           <button class="btn btn-primary" type="submit" id="submitBtn" data-en="Send this and get my quote" data-es="Enviar y recibir mi cotización">Send this and get my quote</button>
           <a class="btn btn-ghost" href="https://www.instagram.com/roseartanddecor/" target="_blank" rel="noopener">
-            <i class="fa-brands fa-instagram" aria-hidden="true"></i><span data-en="Rather send a DM" data-es="Prefiero mandar un DM">Rather send a DM</span>
+            <span data-en="Rather send a DM" data-es="Prefiero mandar un DM">Rather send a DM</span>
           </a>
         </div>
         <p class="form-note" data-en="Your answers go straight to Rose, and they are only ever used to write your estimate."
@@ -631,14 +689,14 @@
       </form>
 
       <div class="form-done" id="formDone">
-        <div class="tick"><i class="fa-solid fa-envelope-circle-check" aria-hidden="true"></i></div>
+        <div class="tick"></div>
         <h3 data-en="Thank you, it is in" data-es="Gracias, ya llegó">Thank you, it is in</h3>
         <p data-en="Your request landed with Rose Art &amp; Decor. You will hear back with a quote as soon as possible, on the contact method you picked."
            data-es="Tu solicitud llegó a Rose Art &amp; Decor. Te responderemos con una cotización lo antes posible, por el medio que elegiste.">
           Your request landed with Rose Art &amp; Decor. You will hear back with a quote as soon as possible, on the contact method you picked.
         </p>
         <a class="btn btn-ghost" href="https://www.instagram.com/roseartanddecor/" target="_blank" rel="noopener">
-          <i class="fa-brands fa-instagram" aria-hidden="true"></i><span data-en="Follow the work while you wait" data-es="Sigue el trabajo mientras tanto">Follow the work while you wait</span>
+          <span data-en="Follow the work while you wait" data-es="Sigue el trabajo mientras tanto">Follow the work while you wait</span>
         </a>
       </div>
     </div>
@@ -715,7 +773,7 @@
       <div class="btn-row">
         <a class="btn btn-gold" href="#quote" data-en="Get my free quote" data-es="Pedir mi cotización gratis">Get my free quote</a>
         <a class="btn btn-ghost" href="https://www.instagram.com/roseartanddecor/" target="_blank" rel="noopener">
-          <i class="fa-brands fa-instagram" aria-hidden="true"></i><span data-en="Message on Instagram" data-es="Escribir por Instagram">Message on Instagram</span>
+          <span data-en="Message on Instagram" data-es="Escribir por Instagram">Message on Instagram</span>
         </a>
       </div>
     </div>
@@ -759,7 +817,7 @@
         <h4 data-en="Get in touch" data-es="Contacto">Get in touch</h4>
         <address>
           <a href="#quote" data-en="Request a free quote" data-es="Pedir cotización gratis">Request a free quote</a>
-          <a href="https://www.instagram.com/roseartanddecor/" target="_blank" rel="noopener"><i class="fa-brands fa-instagram" aria-hidden="true"></i> @roseartanddecor</a>
+          <a href="https://www.instagram.com/roseartanddecor/" target="_blank" rel="noopener">@roseartanddecor</a>
           <span data-en="Miami-Dade and Broward, Florida" data-es="Miami-Dade y Broward, Florida">Miami-Dade and Broward, Florida</span>
           <span data-en="We answer in English or Spanish" data-es="Respondemos en inglés o español">We answer in English or Spanish</span>
         </address>

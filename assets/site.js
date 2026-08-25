@@ -3,7 +3,7 @@
    Mechanics taken from builda-mechanics.md: scroll restoration, drawer,
    accordion with resize resync, anchor hash strip, branded form validation,
    CTA intent routing. New to this build: the EN/ES language engine and the
-   color-story gallery filter with lightbox.
+   seasonal calendar section.
    ========================================================================== */
 if ('scrollRestoration' in history) { history.scrollRestoration = 'auto'; }
 
@@ -156,23 +156,12 @@ if ('scrollRestoration' in history) { history.scrollRestoration = 'auto'; }
     rsz = setTimeout(resyncAccordion, 120);
   });
 
-  /* --------------------------------------------- 5. gallery filter + LB --- */
-  var figs = $$('.gallery figure');
-  $$('.filters button').forEach(function (b) {
-    b.addEventListener('click', function () {
-      var key = b.getAttribute('data-filter');
-      $$('.filters button').forEach(function (o) { o.setAttribute('aria-pressed', String(o === b)); });
-      figs.forEach(function (f) {
-        var tags = (f.getAttribute('data-tags') || '').split(' ');
-        f.classList.toggle('hide', key !== 'all' && tags.indexOf(key) === -1);
-      });
-    });
-  });
-
+  /* ------------------------------------------------------- 5. lightbox ---- */
+  var figs = $$('.work-grid figure');
   var lb = $('#lightbox');
   if (lb && figs.length) {
     var lbImg = $('#lbImg'), lbCap = $('#lbCap');
-    var visible = function () { return figs.filter(function (f) { return !f.classList.contains('hide'); }); };
+    var visible = function () { return figs; };
     var idx = 0;
 
     function show(i) {
