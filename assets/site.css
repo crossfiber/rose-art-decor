@@ -442,9 +442,14 @@ form.sent{display:none;}
   .hamburger{display:flex;}
   .hero-grid{grid-template-columns:1fr;gap:28px;}
   .hero-copy .lede{max-width:100%;}
+  /* one photograph on a phone, not two stacked full width */
   .mosaic{display:block;}
-      .split{grid-template-columns:1fr;gap:26px;}
-  .work-grid{columns:2;}}
+  .mosaic .m2{display:none;}
+  .mosaic .m1{display:flex;justify-content:center;}
+  .mosaic .m1 img{width:auto;max-width:100%;max-height:54vh;}
+  .split{grid-template-columns:1fr;gap:26px;}
+  .work-grid{columns:2;}
+}
 @media (max-width:640px){
   :root{--nav-h:64px;--gut:2px;}
   /* the schedule and the ledger stack into two lines each, nothing truncates */
