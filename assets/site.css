@@ -1,7 +1,10 @@
 /* ==========================================================================
    Rose Art & Decor / site.css
-   Sharp edges, tight gutters, type does the work. No pills, no rounded cards,
-   no icon clip art. Palette sampled from the client's own logo badge.
+   Three shape families, alternating down the page:
+     PILL   interactive things you can press  (buttons, language toggle, tags, chips)
+     FILLED square blocks of photography and colour (tiles, bands, media)
+     LINED  square containers holding data     (form, table, calendar cells, FAQ rules)
+   Nothing is ever two of those at once. Palette sampled from the client's logo badge.
    ========================================================================== */
 
 :root{
@@ -24,6 +27,7 @@
   --sans:"Jost","Helvetica Neue",Arial,sans-serif;
   --maxw:1280px;
   --gut:3px;
+  --pill:999px;
 }
 
 *,*::before,*::after{box-sizing:border-box;}
@@ -59,6 +63,12 @@ p{margin:0 0 1.05em;}
 }
 .chapter::after{content:"";flex:1;height:1px;background:var(--gold);opacity:.45;}
 
+.tag{
+  display:inline-flex;align-items:center;border-radius:var(--pill);
+  border:1px solid currentColor;padding:6px 14px;font-size:.72rem;font-weight:500;
+  letter-spacing:.08em;text-transform:uppercase;line-height:1;
+}
+
 /* ---- layout -------------------------------------------------------------- */
 .wrap{width:min(100% - 48px,var(--maxw));margin-inline:auto;}
 .wrap-narrow{width:min(100% - 48px,860px);margin-inline:auto;}
@@ -78,7 +88,7 @@ section{padding:clamp(44px,4.6vw,72px) 0;position:relative;}
 .btn{
   display:inline-flex;align-items:center;justify-content:center;
   font-family:var(--sans);font-size:.94rem;font-weight:500;letter-spacing:.03em;
-  padding:17px 30px;border:1px solid transparent;cursor:pointer;border-radius:0;
+  padding:16px 30px;border:1px solid transparent;cursor:pointer;border-radius:var(--pill);
   text-decoration:none;transition:background .18s ease,color .18s ease,border-color .18s ease;
   min-height:54px;
 }
@@ -115,9 +125,9 @@ section{padding:clamp(44px,4.6vw,72px) 0;position:relative;}
 .nav-links a:hover{color:var(--ink);}
 .nav-links a:hover::after{right:0;}
 
-.lang{display:inline-flex;align-items:center;border:1px solid var(--ink);flex-shrink:0;}
+.lang{display:inline-flex;align-items:center;border:1px solid var(--ink);flex-shrink:0;border-radius:var(--pill);padding:2px;}
 .lang button{
-  border:0;background:transparent;cursor:pointer;border-radius:0;
+  border:0;background:transparent;cursor:pointer;border-radius:var(--pill);
   font-size:.72rem;font-weight:500;letter-spacing:.12em;padding:0 13px;color:var(--muted);
   transition:background .2s ease,color .2s ease;min-height:38px;
 }
@@ -393,7 +403,7 @@ form.sent{display:none;}
 .mini img{width:100%;height:100%;object-fit:cover;}
 .related{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px;}
 .related a{
-  border:1px solid var(--line);border-radius:0;padding:13px 20px;font-size:.86rem;min-height:46px;
+  border:1px solid var(--line);border-radius:var(--pill);padding:13px 22px;font-size:.86rem;min-height:46px;
   text-decoration:none;color:var(--ink-soft);display:inline-flex;align-items:center;
   transition:border-color .18s ease,color .18s ease,background .18s ease;
 }
