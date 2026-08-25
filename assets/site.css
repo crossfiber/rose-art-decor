@@ -458,7 +458,7 @@ form.sent{display:none;}
   .lgt .x{margin-left:0;width:100%;text-align:left;}
   .lrow{grid-template-columns:1fr auto;gap:6px 14px;padding:14px 0;}
   .lrow .l{grid-column:1/-1;}
-  .lrow .p{justify-self:start;}
+  .lrow .p{justify-self:start;min-width:0;text-align:left;}
   .lrow .go{justify-self:end;}
   body{font-size:16px;}
   section{padding:38px 0;}

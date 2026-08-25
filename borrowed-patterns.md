@@ -129,3 +129,42 @@ switched on it will reject anonymous posts, so the integration has to be tested 
 submission before handover. Fields that are required on the Google Form must always be sent, even when
 the site hides them, which is why this build sends the sourcing answer as the "I will provide
 everything" option whenever the client says they already own their decorations.
+
+
+---
+
+## 11. The ledger, taken wholesale from barberia-estrellas
+
+*Source: `Clients/barberia-estrellas/index.html`, the `#carta` section. Opened for a named reason:
+how a previous build puts services and prices on the home page in one dense block.*
+
+This is the first pattern in this build lifted from a full reference site rather than the mechanics
+library, and it was lifted deliberately. The client's instruction was explicit: reuse the structure,
+the way the information is displayed matters more than novelty.
+
+Barberia's structure, which this build now uses:
+
+```
+.duplex   sticky image column + ledger column
+.lgroup   a numbered group with a gold rule under its header
+.lgt      group header: number, title, descriptor pushed right
+.lrow     grid of 1fr auto auto: name + description | price | action
+```
+
+Re-skin for this brand: Cormorant Garamond service names instead of Anton, burgundy price column
+instead of skewed gold, a pill `See` control instead of a square `Reservar` button, cream ground
+instead of ink. The 1fr auto auto row grid, the sticky media column and the numbered group headers
+are unchanged, because they are the part that works.
+
+**The one adaptation that mattered.** Barberia has ten fixed prices. Rose Art & Decor quotes every
+tree individually, so a fixed price column would have been invented data. The column carries the
+pricing *basis* instead: `By tree height`, `$50 flat`, `By the foot`, `Per space`, `Per occasion`,
+`Add to quote`, `Free to browse`. Only one of those is a number, and it is the one number the client
+actually publishes on her own form. Same structure, no fabrication.
+
+## 12. The schedule rows, same source
+
+The seasonal calendar was six bordered cells and read as tacky. It is now built like barberia's
+`.lrow`: a hairline separated list, month in small caps on the left, occasion in serif, description
+running to the right. The Christmas row is marked with an inset burgundy rule rather than a filled
+pill, which was the specific thing the client disliked.
