@@ -211,7 +211,7 @@ body.drawer-open .hamburger{visibility:hidden;}
 .cal-foot b{font-family:var(--serif);font-size:1.16rem;font-weight:600;color:var(--ink);}
 
 /* ---- services: six tiles, Christmas leading ----------------------------- */
-.svc{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:minmax(196px,1fr);gap:var(--gut);}
+.svc{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:clamp(190px,16vw,232px);gap:var(--gut);}
 .svc>*{min-width:0;}
 .svc a{
   position:relative;display:block;height:100%;text-decoration:none;color:inherit;
@@ -225,6 +225,7 @@ body.drawer-open .hamburger{visibility:hidden;}
 .svc a:hover img{transform:scale(1.05);}
 .svc .lead{grid-column:span 2;grid-row:span 2;display:block;min-width:0;}
 .svc .fig{height:100%;overflow:hidden;}
+.svc img{height:100%;}
 .svc .cap{position:absolute;left:0;right:0;bottom:0;padding:18px 18px 17px;z-index:2;color:var(--cream);}
 .svc .cap h3{color:var(--cream);margin-bottom:6px;}
 .svc .lead .cap h3{font-size:clamp(1.7rem,2.6vw,2.4rem);}
@@ -430,8 +431,8 @@ form.sent{display:none;}
   .cal-cell{border-bottom:1px solid var(--line);}
   .cal-cell:nth-child(3n){border-right:0;}
   .cal-cell:nth-last-child(-n+3){border-bottom:0;}
-  .svc{grid-template-columns:repeat(2,1fr);grid-auto-rows:minmax(190px,1fr);}
-  .svc .lead{grid-column:span 2;grid-row:auto;min-height:250px;}
+  .svc{grid-template-columns:repeat(2,1fr);grid-auto-rows:200px;}
+  .svc .lead{grid-column:span 2;grid-row:span 1;min-height:0;}
 }
 @media (max-width:940px){
   .nav-links,.nav-cta{display:none;}
@@ -481,8 +482,8 @@ form.sent{display:none;}
   .cal-cell p{font-size:.8rem;}
   .cal-foot{padding:16px;font-size:.87rem;}
 
-  .svc{grid-template-columns:1fr;grid-auto-rows:minmax(206px,auto);}
-  .svc .lead{grid-column:auto;min-height:250px;}
+  .svc{grid-template-columns:1fr;grid-auto-rows:196px;}
+  .svc .lead{grid-column:auto;grid-row:span 1;min-height:0;}
   .svc .cap{padding:18px 16px 17px;}
   .svc .lead .cap h3{font-size:1.5rem;}
   .svc .cap h3{font-size:1.28rem;}
