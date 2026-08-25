@@ -191,33 +191,7 @@ body.drawer-open .hamburger{visibility:hidden;}
   line-height:1.45;color:var(--gold-light);max-width:62ch;font-weight:500;
 }
 
-/* ---- the year, a ribbon of dates ---------------------------------------- */
-.ribbon{display:flex;flex-wrap:wrap;gap:14px 46px;align-items:flex-end;padding-bottom:22px;}
-.stop{display:flex;flex-direction:column;min-width:0;text-decoration:none;color:inherit;}
-.stop .mo{font-family:var(--sans);font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-bottom:7px;}
-.stop .oc{font-family:var(--serif);font-size:clamp(1.4rem,2.1vw,1.9rem);font-weight:600;line-height:1.06;color:var(--ink);}
-.stop.peak{
-  background:var(--burgundy);color:#fff;border-radius:var(--pill);
-  padding:14px 26px 16px;transition:background .2s ease;
-}
-.stop.peak .mo{color:var(--gold-light);}
-.stop.peak .oc{color:#fff;}
-.stop.peak .now{font-family:var(--sans);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-light);margin-top:6px;}
-.stop.peak:hover{background:var(--burgundy-deep);}
-.ribbon-foot{
-  border-top:1px solid var(--line);padding-top:20px;margin:0;
-  font-size:1rem;color:var(--ink-soft);
-}
 
-/* ---- services: alternating rows, images never cropped ------------------- */
-.srows{display:grid;gap:clamp(26px,2.8vw,40px);}
-.srow{display:grid;grid-template-columns:1fr 1fr;gap:clamp(22px,2.8vw,44px);align-items:center;}
-.srow>*{min-width:0;}
-.srow:nth-child(even) figure{order:2;}
-.srow figure{margin:0;display:flex;justify-content:center;align-items:center;height:clamp(250px,25vw,356px);}
-.srow img{width:auto;height:auto;max-width:100%;max-height:100%;display:block;}
-.scopy h3{margin-bottom:12px;}
-.scopy p{color:var(--ink-soft);font-size:1.02rem;line-height:1.6;margin-bottom:18px;max-width:46ch;}
 
 /* ---- work: a tight fixed grid, not a masonry dump ----------------------- */
 .work-grid{columns:3;column-gap:var(--gut);}
@@ -271,17 +245,59 @@ body.drawer-open .hamburger{visibility:hidden;}
 .step h3{margin-bottom:9px;font-size:1.34rem;}
 .step p{font-size:.92rem;margin:0;color:rgba(251,247,241,.76);line-height:1.58;}
 
-/* ---- pull quote ---------------------------------------------------------- */
-.pull{max-width:100%;border-left:2px solid var(--gold);padding-left:22px;}
-.pull blockquote{
-  margin:0;font-family:var(--serif);font-style:italic;font-weight:500;
-  font-size:clamp(1.8rem,2.9vw,2.5rem);line-height:1.13;color:var(--burgundy);
-}
-.pull cite{display:block;font-family:var(--sans);font-style:normal;font-size:.82rem;color:var(--muted);margin-top:16px;letter-spacing:.04em;}
-.pull-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(28px,4.2vw,60px);align-items:center;margin-bottom:clamp(34px,4vw,52px);}
-.pull-grid>*{min-width:0;}
 
-/* ---- comparison table ---------------------------------------------------- */
+
+/* ---- the year: a schedule, dense, no boxes ------------------------------ */
+.yr-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:clamp(26px,3.4vw,54px);align-items:start;}
+.yr-grid>*{min-width:0;}
+.sched{border-top:1px solid var(--line);}
+.sr{
+  display:grid;grid-template-columns:6.5rem 12rem 1fr;gap:16px;align-items:baseline;
+  padding:13px 0;border-bottom:1px solid var(--line);text-decoration:none;color:inherit;
+}
+.sr .mo{font-family:var(--sans);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);}
+.sr .oc{font-family:var(--serif);font-size:1.28rem;font-weight:600;line-height:1.1;color:var(--ink);}
+.sr .de{font-size:.9rem;color:var(--muted);line-height:1.5;}
+.sr.now{background:rgba(124,31,44,.05);box-shadow:inset 3px 0 0 var(--burgundy);padding-left:14px;}
+.sr.now .oc{color:var(--burgundy);}
+.sr.now .mo{color:var(--burgundy);}
+.sr.now:hover{background:rgba(124,31,44,.09);}
+.sr.all .oc{color:var(--pine);}
+
+/* ---- the ledger: services and prices together, one photograph ---------- */
+.duplex{display:grid;grid-template-columns:.72fr 1.28fr;gap:clamp(26px,3.6vw,56px);align-items:start;}
+.duplex>*{min-width:0;}
+.dm{position:sticky;top:calc(var(--nav-h) + 22px);}
+.dm img{width:100%;height:auto;}
+.dm p{margin:14px 0 0;font-size:.88rem;color:var(--muted);line-height:1.55;}
+.dm b{display:block;color:var(--gold);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px;font-weight:600;}
+
+.lgroup{margin-bottom:30px;}
+.lgroup:last-of-type{margin-bottom:0;}
+.lgt{display:flex;align-items:baseline;gap:12px;padding:0 0 9px;border-bottom:1px solid var(--gold);}
+.lgt .gn{font-family:var(--serif);font-size:.92rem;font-weight:700;color:var(--gold);}
+.lgt h3{font-size:1.04rem;font-family:var(--sans);font-weight:500;letter-spacing:.06em;text-transform:uppercase;}
+.lgt .x{margin-left:auto;font-size:.72rem;letter-spacing:.08em;color:var(--muted);text-align:right;}
+.lrow{
+  display:grid;grid-template-columns:1fr auto auto;gap:18px;align-items:center;
+  padding:15px 0;border-bottom:1px solid var(--line-soft);text-decoration:none;color:inherit;
+  transition:background .16s ease;
+}
+.lrow:hover{background:rgba(42,20,24,.035);}
+.lrow .l{display:block;min-width:0;}
+.lrow .n{display:block;font-family:var(--serif);font-size:1.24rem;font-weight:600;line-height:1.14;color:var(--ink);}
+.lrow .d{display:block;font-size:.87rem;color:var(--muted);margin-top:4px;line-height:1.5;max-width:46ch;}
+.lrow .p{font-family:var(--serif);font-size:1.16rem;font-weight:700;color:var(--burgundy);white-space:nowrap;}
+.lrow .go{
+  display:inline-flex;align-items:center;justify-content:center;min-height:40px;min-width:66px;
+  border:1px solid var(--line);border-radius:var(--pill);font-size:.78rem;letter-spacing:.04em;
+  color:var(--ink-soft);transition:background .16s ease,color .16s ease,border-color .16s ease;
+}
+.lrow:hover .go{background:var(--ink);color:var(--cream);border-color:var(--ink);}
+.ledger-foot{margin:22px 0 0;font-size:.94rem;color:var(--ink-soft);}
+.ledger .btn-row{margin-top:16px;}
+
+/* ---- comparison table, sub-pages only ---------------------------------------------------- */
 .cmp{width:100%;border-collapse:collapse;background:var(--paper);border:1px solid var(--ink);}
 .cmp th,.cmp td{padding:19px 22px;text-align:left;vertical-align:top;font-size:.95rem;line-height:1.54;border-bottom:1px solid var(--line-soft);}
 .cmp thead th{background:var(--ink);color:var(--cream);font-family:var(--serif);font-size:1.24rem;font-weight:600;border-bottom:0;}
@@ -413,12 +429,14 @@ form.sent{display:none;}
   .foot-grid{grid-template-columns:1fr 1fr;gap:32px;}
   .pull-grid{grid-template-columns:1fr;gap:26px;}
             }
-@media (max-width:860px){
-  .srow{grid-template-columns:1fr;gap:18px;}
-  .srow:nth-child(even) figure{order:0;}
-  .srow figure{height:300px;}
-  .ribbon{gap:16px 30px;}
+@media (max-width:900px){
+  .yr-grid{grid-template-columns:1fr;gap:20px;}
+  .duplex{grid-template-columns:1fr;gap:24px;}
+  .dm{position:static;display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center;}
+  .dm img{max-height:190px;width:auto;}
+  .dm p{margin:0;}
 }
+@media (max-width:860px){}
 @media (max-width:940px){
   .nav-links,.nav-cta{display:none;}
   .hamburger{display:flex;}
@@ -429,6 +447,19 @@ form.sent{display:none;}
   .work-grid{columns:2;}}
 @media (max-width:640px){
   :root{--nav-h:64px;--gut:2px;}
+  /* the schedule and the ledger stack into two lines each, nothing truncates */
+  .sr{grid-template-columns:1fr;gap:2px;padding:12px 0;}
+  .sr .mo{order:-1;}
+  .sr .de{font-size:.86rem;}
+  .sr.now{padding-left:12px;}
+  .dm{grid-template-columns:1fr;}
+  .dm img{max-height:none;width:100%;}
+  .lgt{flex-wrap:wrap;gap:8px;}
+  .lgt .x{margin-left:0;width:100%;text-align:left;}
+  .lrow{grid-template-columns:1fr auto;gap:6px 14px;padding:14px 0;}
+  .lrow .l{grid-column:1/-1;}
+  .lrow .p{justify-self:start;}
+  .lrow .go{justify-self:end;}
   body{font-size:16px;}
   section{padding:38px 0;}
   .wrap,.wrap-narrow{width:calc(100% - 32px);}
@@ -461,13 +492,7 @@ form.sent{display:none;}
   .work-foot{margin-top:16px;font-size:.87rem;}
 
       
-  .steps{grid-template-columns:1fr 1fr;}
-  .srow figure{height:236px;}
-  .srows{gap:24px;}
-  .scopy p{font-size:.96rem;margin-bottom:14px;}
-  .stop .oc{font-size:1.28rem;}
-  .ribbon{gap:14px 24px;}
-  .strip p{font-size:1.08rem;}
+  .steps{grid-template-columns:1fr 1fr;}  .strip p{font-size:1.08rem;}
   .step{padding:22px 16px 24px 0;}
   .step .n{font-size:2.6rem;margin-bottom:12px;}
   .step h3{font-size:1.08rem;}
