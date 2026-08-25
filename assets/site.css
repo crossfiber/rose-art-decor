@@ -451,7 +451,7 @@ form.sent{display:none;}
 @media (max-width:640px){
   :root{--nav-h:64px;--gut:2px;}
   body{font-size:16px;}
-  section{padding:52px 0;}
+  section{padding:48px 0;}
   .wrap,.wrap-narrow{width:calc(100% - 32px);}
   .sec-head{margin-bottom:24px;}
   h1{font-size:clamp(2.2rem,9vw,3rem);}
@@ -481,8 +481,8 @@ form.sent{display:none;}
   .cal-cell p{font-size:.8rem;}
   .cal-foot{padding:16px;font-size:.87rem;}
 
-  .svc{grid-template-columns:1fr;grid-auto-rows:minmax(300px,auto);}
-  .svc .lead{grid-column:auto;min-height:340px;}
+  .svc{grid-template-columns:1fr;grid-auto-rows:minmax(252px,auto);}
+  .svc .lead{grid-column:auto;min-height:300px;}
   .svc .cap{padding:18px 16px 17px;}
   .svc .lead .cap h3{font-size:1.5rem;}
   .svc .cap h3{font-size:1.28rem;}
