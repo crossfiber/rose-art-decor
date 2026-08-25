@@ -462,7 +462,9 @@ form.sent{display:none;}
 
       
   .steps{grid-template-columns:1fr 1fr;}
-  .srow figure{height:260px;}
+  .srow figure{height:236px;}
+  .srows{gap:24px;}
+  .scopy p{font-size:.96rem;margin-bottom:14px;}
   .stop .oc{font-size:1.28rem;}
   .ribbon{gap:14px 24px;}
   .strip p{font-size:1.08rem;}
