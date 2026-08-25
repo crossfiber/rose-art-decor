@@ -238,7 +238,7 @@ body.drawer-open .hamburger{visibility:hidden;}
 /* ---- work: a tight fixed grid, not a masonry dump ----------------------- */
 .work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gut);}
 .work-grid>*{min-width:0;}
-.work-grid figure{margin:0;position:relative;overflow:hidden;cursor:zoom-in;background:var(--ink);aspect-ratio:3/4;}
+.work-grid figure{margin:0;position:relative;overflow:hidden;cursor:zoom-in;background:var(--ink);aspect-ratio:4/5;}
 .work-grid img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s cubic-bezier(.2,.6,.2,1);}
 .work-grid figure:hover img{transform:scale(1.05);}
 .work-grid figcaption{
@@ -444,6 +444,7 @@ form.sent{display:none;}
   .mosaic .m1{aspect-ratio:4/3;}
   .split{grid-template-columns:1fr;gap:26px;}
   .work-grid{grid-template-columns:repeat(2,1fr);}
+  .work-grid figure{aspect-ratio:3/4;}
   .strip .wrap{grid-template-columns:1fr 1fr;}
   .strip div{border-bottom:1px solid rgba(230,210,160,.2);}
   .strip div:nth-child(2n){border-right:0;}
