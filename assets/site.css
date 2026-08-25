@@ -60,6 +60,7 @@ p{margin:0 0 1.05em;}
 .chapter{
   font-family:var(--serif);font-size:1.05rem;font-weight:600;color:var(--gold);
   letter-spacing:.02em;display:flex;align-items:center;gap:14px;margin:0 0 16px;
+  min-height:1.5em;
 }
 .chapter::after{content:"";flex:1;height:1px;background:var(--gold);opacity:.45;}
 
