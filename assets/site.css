@@ -424,7 +424,7 @@ form.sent{display:none;}
   .panel{grid-area:auto;visibility:visible;opacity:1;flex:0 0 82%;scroll-snap-align:center;}
   .panel figure{height:330px;}
   .hero{
-    background:linear-gradient(rgba(42,20,24,.62) 0%,rgba(42,20,24,.4) 40%,rgba(42,20,24,.82) 100%),
+    background:linear-gradient(rgba(42,20,24,.82) 0%,rgba(42,20,24,.68) 45%,rgba(42,20,24,.9) 100%),
       url("tree-red-gold-classic-md.webp") center 32%/cover no-repeat var(--ink);
     min-height:560px;min-height:92svh;display:flex;align-items:center;
   }
