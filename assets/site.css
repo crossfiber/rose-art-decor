@@ -165,7 +165,7 @@ body.drawer-open .hamburger{visibility:hidden;}
 .hero-copy .sub-es{color:var(--gold-light);}
 .hero-copy .lede{margin-top:22px;max-width:42ch;color:rgba(251,247,241,.82);}
 .hero-photo{margin:0;display:flex;justify-content:center;}
-.hero-photo img{width:auto;max-width:100%;max-height:min(78vh,760px);height:auto;}
+.hero-photo img{width:auto;max-width:100%;max-height:700px;height:auto;}
 .hero-proof{
   margin-top:24px;padding-top:18px;border-top:1px solid rgba(230,210,160,.3);
   font-size:.95rem;color:rgba(251,247,241,.66);max-width:48ch;line-height:1.58;
@@ -173,11 +173,6 @@ body.drawer-open .hamburger{visibility:hidden;}
 .hero-proof b{font-family:var(--serif);font-size:1.2em;font-weight:700;color:var(--gold-light);}
 .hero .btn-ghost{border-color:rgba(251,247,241,.55);color:var(--cream);}
 .hero .btn-ghost:hover{background:var(--cream);color:var(--ink);border-color:var(--cream);}
-
-.mosaic{display:grid;grid-template-columns:1fr 1fr;gap:var(--gut);align-items:end;}
-.mosaic>*{min-width:0;}
-.mosaic figure{margin:0;min-width:0;}
-.mosaic img{width:100%;height:auto;display:block;}
 
 /* ---- one line of what you get, no cells, no dividers -------------------- */
 .strip{background:var(--ink);color:var(--cream);padding:clamp(26px,3vw,40px) 0;}
@@ -280,8 +275,8 @@ body.drawer-open .hamburger{visibility:hidden;}
 .show-panels{display:grid;}
 .panel{grid-area:1/1;visibility:hidden;opacity:0;transition:opacity .28s ease;}
 .panel.active{visibility:visible;opacity:1;}
-.panel figure{margin:0;display:flex;justify-content:center;}
-.panel img{width:auto;max-width:100%;max-height:min(56vh,520px);height:auto;}
+.panel figure{margin:0;display:flex;justify-content:center;align-items:flex-end;height:500px;}
+.panel img{width:auto;max-width:100%;max-height:100%;height:auto;}
 .panel-c{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 18px;margin-top:14px;}
 .panel-c h3{font-size:1.2rem;}
 .panel-c p{font-size:.92rem;color:var(--ink-soft);margin:0;flex-basis:100%;max-width:56ch;}
@@ -427,9 +422,15 @@ form.sent{display:none;}
   .show-panels{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-ms-overflow-style:none;padding-bottom:4px;}
   .show-panels::-webkit-scrollbar{display:none;}
   .panel{grid-area:auto;visibility:visible;opacity:1;flex:0 0 82%;scroll-snap-align:center;}
-  .panel img{max-height:46vh;}
-  .hero-grid{grid-template-columns:1fr;gap:24px;}
-  .hero-photo img{max-height:52vh;}
+  .panel figure{height:330px;}
+  .hero{
+    background:linear-gradient(rgba(42,20,24,.62) 0%,rgba(42,20,24,.4) 40%,rgba(42,20,24,.82) 100%),
+      url("tree-red-gold-classic-md.webp") center 32%/cover no-repeat var(--ink);
+    min-height:560px;min-height:92svh;display:flex;align-items:center;
+  }
+  .hero-grid{grid-template-columns:1fr;gap:0;}
+  .hero-photo{display:none;}
+  .hero-proof{border-top-color:rgba(230,210,160,.4);}
   .yr-grid{grid-template-columns:1fr;gap:20px;}
 }
 @media (max-width:860px){}
@@ -439,10 +440,6 @@ form.sent{display:none;}
   .hero-grid{grid-template-columns:1fr;gap:28px;}
   .hero-copy .lede{max-width:100%;}
   /* one photograph on a phone, not two stacked full width */
-  .mosaic{display:block;}
-  .mosaic .m2{display:none;}
-  .mosaic .m1{display:flex;justify-content:center;}
-  .mosaic .m1 img{width:auto;max-width:100%;max-height:54vh;}
   .split{grid-template-columns:1fr;gap:26px;}
   .work-grid{columns:2;}
 }
