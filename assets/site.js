@@ -341,6 +341,20 @@ if ('scrollRestoration' in history) { history.scrollRestoration = 'auto'; }
     });
   }
 
+
+  /* ------------------------------------------------ 8. service showcase --- */
+  var its = $$('.show-it');
+  if (its.length) {
+    function setPanel(id) {
+      its.forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-panel') === id)); });
+      $$('.panel').forEach(function (pn) { pn.classList.toggle('active', pn.id === id); });
+    }
+    its.forEach(function (b) {
+      b.addEventListener('click', function () { setPanel(b.getAttribute('data-panel')); });
+      b.addEventListener('mouseenter', function () { setPanel(b.getAttribute('data-panel')); });
+    });
+  }
+
   /* -------------------------------------------------------- 7. year ------- */
   $$('[data-year]').forEach(function (el) { el.textContent = new Date().getFullYear(); });
 })();
