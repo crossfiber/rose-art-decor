@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://crossfiber.github.io/rose-art-decor/sitemap.xml
