@@ -207,7 +207,7 @@ if ('scrollRestoration' in history) { history.scrollRestoration = 'auto'; }
   /* ------------------------------------------------------ 6. quote form --- */
   var form = $('#quoteForm');
   if (form) {
-    // ---- two screens: who you are, then the tree (the Cooper Crane lift-ticket pattern, re-skinned)
+    // ---- three screens: what you need, the tree, then who you are (Cooper Crane lift-ticket pattern)
     var steps = $$('.qf-step', form);
     var bars = $$('.qf-bars i');
     var countEl = $('#qfCount');
@@ -224,42 +224,82 @@ if ('scrollRestoration' in history) { history.scrollRestoration = 'auto'; }
       var shell = form.closest('.qf');
       if (shell && n > 0) shell.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
-    function validateStep1() {
-      var first = null;
-      $$('.field', steps[0]).forEach(function (f) { f.classList.remove('err'); });
-      function need(sel) {
-        var el = $(sel, form); if (!el) return null;
-        var f = el.closest('.field');
-        if (!el.value.trim()) { f.classList.add('err'); first = first || f; }
-        return el;
+    function markFirst(first) {
+      if (!first) return true;
+      var fo = first.querySelector('input, select, textarea');
+      if (fo) fo.focus({ preventScroll: true });
+      return false;
+    }
+    function needText(sel, box) {
+      var el = $(sel, form); if (!el) return null;
+      var f = el.closest('.field');
+      if (!el.value.trim()) { f.classList.add('err'); box.first = box.first || f; }
+      return el;
+    }
+    function needRadio(name, box) {
+      if (!$('input[name="' + name + '"]:checked', form)) {
+        var f = $('input[name="' + name + '"]', form).closest('.field');
+        f.classList.add('err'); box.first = box.first || f;
       }
-      need('#f-name');
-      var email = need('#f-email');
-      var phone = need('#f-phone');
+    }
+    // step 1: what you need
+    function validateStep1() {
+      var box = { first: null };
+      $$('.field', steps[0]).forEach(function (f) { f.classList.remove('err'); });
+      needRadio('owned', box);
+      var ownedVal = $('input[name="owned"]:checked', form);
+      if (ownedVal && ownedVal.value === 'No') needRadio('buy', box);
+      needRadio('around', box);
+      return markFirst(box.first);
+    }
+    // step 2: the tree
+    function validateStep2() {
+      var box = { first: null };
+      $$('.field', steps[1]).forEach(function (f) { f.classList.remove('err'); });
+      needText('#f-city', box);
+      needText('#f-size', box);
+      return markFirst(box.first);
+    }
+    // step 3: who you are
+    function validateStep3() {
+      var box = { first: null };
+      $$('.field', steps[2]).forEach(function (f) { f.classList.remove('err'); });
+      needText('#f-name', box);
+      var email = needText('#f-email', box);
+      var phone = needText('#f-phone', box);
       if (email && email.value.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.value.trim())) {
-        var ef = email.closest('.field'); ef.classList.add('err'); first = first || ef;
+        var ef = email.closest('.field'); ef.classList.add('err'); box.first = box.first || ef;
       }
       if (phone && phone.value.trim() && phone.value.replace(/\D/g, '').length < 10) {
-        var pf = phone.closest('.field'); pf.classList.add('err'); first = first || pf;
+        var pf = phone.closest('.field'); pf.classList.add('err'); box.first = box.first || pf;
       }
-      if (first) {
-        var fo = first.querySelector('input, select, textarea');
-        if (fo) fo.focus({ preventScroll: true });
-        return false;
-      }
-      return true;
+      needRadio('contact', box);
+      return markFirst(box.first);
     }
+    var validators = [validateStep1, validateStep2, validateStep3];
     $$('.qf-next', form).forEach(function (b) {
-      b.addEventListener('click', function () { if (validateStep1()) showStep(Math.min(cur + 1, steps.length - 1)); });
+      b.addEventListener('click', function () { if (validators[cur]()) showStep(Math.min(cur + 1, steps.length - 1)); });
     });
     $$('.qf-back', form).forEach(function (b) {
       b.addEventListener('click', function () { showStep(Math.max(cur - 1, 0)); });
     });
-    // Enter on screen one advances instead of submitting
-    steps[0].addEventListener('keydown', function (e) {
-      if (e.key === 'Enter' && e.target.tagName === 'INPUT') { e.preventDefault(); if (validateStep1()) showStep(1); }
+    // Enter inside a text field advances instead of submitting early
+    form.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' && e.target.tagName === 'INPUT' && cur < steps.length - 1) {
+        e.preventDefault(); if (validators[cur]()) showStep(cur + 1);
+      }
     });
-    var GFORM = 'https://docs.google.com/forms/d/e/1FAIpQLSePVDAvasT7-rf5k2Ydhqu27_G6I_XD_5nh-FN5crZXNFMOUg/formResponse';
+    // phone formats itself as you type: 305-555-1234
+    var phoneEl = $('#f-phone', form);
+    if (phoneEl) {
+      phoneEl.addEventListener('input', function () {
+        var d = phoneEl.value.replace(/\D/g, '').slice(0, 10);
+        var out = d;
+        if (d.length > 6) out = d.slice(0, 3) + '-' + d.slice(3, 6) + '-' + d.slice(6);
+        else if (d.length > 3) out = d.slice(0, 3) + '-' + d.slice(3);
+        phoneEl.value = out;
+      });
+    }
 
     // radio cards get a selected state
     $$('.radio input', form).forEach(function (r) {
@@ -294,44 +334,12 @@ if ('scrollRestoration' in history) { history.scrollRestoration = 'auto'; }
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      var first = null;
-      $$('.field', steps[1]).forEach(function (f) { f.classList.remove('err'); });
-
-      function need(sel) {
-        var el = $(sel, form);
-        if (!el) return null;
-        var f = el.closest('.field');
-        if (!el.value.trim()) { fail(f); first = first || f; }
-        return el;
+      for (var i = 0; i < validators.length; i++) {
+        if (!validators[i]()) { showStep(i); return; }
       }
-      if (!validateStep1()) { showStep(0); return; }
       var name = $('#f-name', form), email = $('#f-email', form), phone = $('#f-phone', form);
-      var city = need('#f-city');
-      var county = need('#f-county');
-      var size = need('#f-size');
-      var hood = $('#f-hood', form);
-      var locParts = [city ? city.value.trim() : ''];
-      if (county && county.value) locParts.push(county.value === 'Other' ? (lang === 'es' ? 'otro condado' : 'other county') : county.value + ' County');
-      var locStr = locParts.filter(Boolean).join(', ') + (hood && hood.value.trim() ? ' (' + hood.value.trim() + ')' : '');
-
-      ['owned', 'around', 'contact'].forEach(function (n) {
-        if (!$('input[name="' + n + '"]:checked', form)) {
-          var f = $('input[name="' + n + '"]', form).closest('.field');
-          fail(f); first = first || f;
-        }
-      });
-      var ownedVal = $('input[name="owned"]:checked', form);
-      if (ownedVal && ownedVal.value === 'No' && !$('input[name="buy"]:checked', form)) {
-        var bf = $('input[name="buy"]', form).closest('.field');
-        fail(bf); first = first || bf;
-      }
-
-      if (first) {
-        first.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        var focusable = first.querySelector('input, select, textarea');
-        if (focusable) setTimeout(function () { focusable.focus({ preventScroll: true }); }, 320);
-        return;
-      }
+      var city = $('#f-city', form), size = $('#f-size', form);
+      var locStr = city.value.trim();
 
       // ---- map onto the client's existing Google Form ----
       var pick = function (n) { var c = $('input[name="' + n + '"]:checked', form); return c ? c.value : ''; };
