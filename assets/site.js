@@ -56,7 +56,7 @@ if ('scrollRestoration' in history) { history.scrollRestoration = 'auto'; }
     var other = lang === 'en' ? 'es' : 'en';
     $$('.lang-sw').forEach(function (b) {
       b.setAttribute('data-set', other);
-      b.textContent = other === 'es' ? 'Español' : 'English';
+      b.textContent = other.toUpperCase();
       b.setAttribute('aria-label', other === 'es' ? 'Cambiar a español' : 'Switch to English');
     });
     if (typeof closeModal === 'function') closeModal();
