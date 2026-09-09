@@ -207,6 +207,58 @@ if ('scrollRestoration' in history) { history.scrollRestoration = 'auto'; }
   /* ------------------------------------------------------ 6. quote form --- */
   var form = $('#quoteForm');
   if (form) {
+    // ---- two screens: who you are, then the tree (the Cooper Crane lift-ticket pattern, re-skinned)
+    var steps = $$('.qf-step', form);
+    var bars = $$('.qf-bars i');
+    var countEl = $('#qfCount');
+    var cur = 0;
+    function showStep(n) {
+      cur = n;
+      steps.forEach(function (st, i) { st.classList.toggle('on', i === n); });
+      bars.forEach(function (b, i) { b.classList.toggle('on', i <= n); });
+      if (countEl) {
+        var en = 'Step ' + (n + 1) + ' of ' + steps.length, es = 'Paso ' + (n + 1) + ' de ' + steps.length;
+        countEl.setAttribute('data-en', en); countEl.setAttribute('data-es', es);
+        countEl.textContent = lang === 'es' ? es : en;
+      }
+      var shell = form.closest('.qf');
+      if (shell && n > 0) shell.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    function validateStep1() {
+      var first = null;
+      $$('.field', steps[0]).forEach(function (f) { f.classList.remove('err'); });
+      function need(sel) {
+        var el = $(sel, form); if (!el) return null;
+        var f = el.closest('.field');
+        if (!el.value.trim()) { f.classList.add('err'); first = first || f; }
+        return el;
+      }
+      need('#f-name');
+      var email = need('#f-email');
+      var phone = need('#f-phone');
+      if (email && email.value.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.value.trim())) {
+        var ef = email.closest('.field'); ef.classList.add('err'); first = first || ef;
+      }
+      if (phone && phone.value.trim() && phone.value.replace(/\D/g, '').length < 10) {
+        var pf = phone.closest('.field'); pf.classList.add('err'); first = first || pf;
+      }
+      if (first) {
+        var fo = first.querySelector('input, select, textarea');
+        if (fo) fo.focus({ preventScroll: true });
+        return false;
+      }
+      return true;
+    }
+    $$('.qf-next', form).forEach(function (b) {
+      b.addEventListener('click', function () { if (validateStep1()) showStep(Math.min(cur + 1, steps.length - 1)); });
+    });
+    $$('.qf-back', form).forEach(function (b) {
+      b.addEventListener('click', function () { showStep(Math.max(cur - 1, 0)); });
+    });
+    // Enter on screen one advances instead of submitting
+    steps[0].addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' && e.target.tagName === 'INPUT') { e.preventDefault(); if (validateStep1()) showStep(1); }
+    });
     var GFORM = 'https://docs.google.com/forms/d/e/1FAIpQLSePVDAvasT7-rf5k2Ydhqu27_G6I_XD_5nh-FN5crZXNFMOUg/formResponse';
 
     // radio cards get a selected state
@@ -243,7 +295,7 @@ if ('scrollRestoration' in history) { history.scrollRestoration = 'auto'; }
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       var first = null;
-      $$('.field', form).forEach(function (f) { f.classList.remove('err'); });
+      $$('.field', steps[1]).forEach(function (f) { f.classList.remove('err'); });
 
       function need(sel) {
         var el = $(sel, form);
@@ -252,18 +304,16 @@ if ('scrollRestoration' in history) { history.scrollRestoration = 'auto'; }
         if (!el.value.trim()) { fail(f); first = first || f; }
         return el;
       }
-      var name = need('#f-name');
-      var email = need('#f-email');
-      var phone = need('#f-phone');
-      var loc = need('#f-location');
+      if (!validateStep1()) { showStep(0); return; }
+      var name = $('#f-name', form), email = $('#f-email', form), phone = $('#f-phone', form);
+      var city = need('#f-city');
+      var county = need('#f-county');
       var size = need('#f-size');
+      var hood = $('#f-hood', form);
+      var locParts = [city ? city.value.trim() : ''];
+      if (county && county.value) locParts.push(county.value === 'Other' ? (lang === 'es' ? 'otro condado' : 'other county') : county.value + ' County');
+      var locStr = locParts.filter(Boolean).join(', ') + (hood && hood.value.trim() ? ' (' + hood.value.trim() + ')' : '');
 
-      if (email && email.value.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.value.trim())) {
-        var ef = email.closest('.field'); fail(ef); first = first || ef;
-      }
-      if (phone && phone.value.trim() && phone.value.replace(/\D/g, '').length < 10) {
-        var pf = phone.closest('.field'); fail(pf); first = first || pf;
-      }
       ['owned', 'around', 'contact'].forEach(function (n) {
         if (!$('input[name="' + n + '"]:checked', form)) {
           var f = $('input[name="' + n + '"]', form).closest('.field');
@@ -306,7 +356,7 @@ if ('scrollRestoration' in history) { history.scrollRestoration = 'auto'; }
       data.append('entry.1000057', email.value.trim());
       data.append('entry.967112212', phone.value.trim());
       data.append('entry.602909070', ($('#f-instagram') ? $('#f-instagram').value.trim() : ''));
-      data.append('entry.2055232012', loc.value.trim());
+      data.append('entry.2055232012', locStr);
       data.append('entry.824677231', size.value.trim());
       data.append('entry.1000020', owned);
       data.append('entry.1000022', buy);
