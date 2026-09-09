@@ -101,7 +101,7 @@
 </script>
 </head>
 <body>
-
+<a class="skip-link" href="#main" data-en="Skip to content" data-es="Ir al contenido">Skip to content</a>
 <header class="nav">
   <div class="wrap">
     <a class="brand" href="./" aria-label="Rose Art and Decor, home">
@@ -112,11 +112,9 @@
       <a href="#year"     data-en="The year"  data-es="El año">The year</a>
       <a href="#services" data-en="Services and prices"  data-es="Servicios y precios">Services and prices</a>
       <a href="#about"    data-en="About"         data-es="Nosotras">About</a>
+      <a href="#faq"      data-en="Questions"     data-es="Preguntas">Questions</a>
     </nav>
-    <div class="lang" role="group" aria-label="Language, Idioma">
-      <button type="button" data-set="en" aria-pressed="true">EN</button>
-      <button type="button" data-set="es" aria-pressed="false">ES</button>
-    </div>
+    <button type="button" class="lang-sw" data-set="es" aria-label="Cambiar a español">Español</button>
     <a class="btn btn-primary nav-cta" href="#quote" data-en="Get my quote" data-es="Pedir mi cotización">Get my quote</a>
     <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="navDrawer">
       <i></i><i></i><i></i>
@@ -130,10 +128,10 @@
     <span class="brand-txt"><b>Rose Art &amp; Decor</b><span>Miami</span></span>
     <button class="drawer-close" id="drawerClose" aria-label="Close menu">&times;</button>
   </div>
+  <div class="drawer-lang"><button type="button" class="lang-sw" data-set="es" aria-label="Cambiar a español">Español</button></div>
   <nav>
     <a href="#year"><span data-en="The year" data-es="El año">The year</span></a>
     <a href="#services"><span data-en="Services and prices" data-es="Servicios y precios">Services and prices</span></a>
-    <a href="#faq"><span data-en="Questions" data-es="Preguntas">Questions</span></a>
     <a href="#about"><span data-en="About" data-es="Nosotras">About</span></a>
     <a href="#faq"><span data-en="Questions" data-es="Preguntas">Questions</span></a>
   </nav>
@@ -145,11 +143,11 @@
   </div>
 </aside>
 
-<!-- ============ HERO: the photograph is the design ==================== -->
+<main id="main" tabindex="-1">
+<!-- ============ HERO: ivory room, the photograph is the design ========= -->
 <section class="hero">
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <p class="chapter">Miami-Dade / Broward / West Palm Beach</p>
       <h1>
         <span data-en="The Christmas tree your guests ask about" data-es="El árbol del que hablan tus invitados">The Christmas tree your guests ask about</span>
         <span class="sub-es" data-en="El árbol del que hablan tus invitados" data-es="The Christmas tree your guests ask about">El árbol del que hablan tus invitados</span>
@@ -160,203 +158,269 @@
         You pick the color story. Rose Art &amp; Decor designs it, sources whatever you are missing, and builds the whole thing in your living room, lobby or office. You come home to a finished tree.
       </p>
       <div class="btn-row">
-        <a class="btn btn-gold" href="#quote" data-want="Christmas tree design and installation" data-en="Get my free quote" data-es="Pedir mi cotización gratis">Get my free quote</a>
+        <a class="btn btn-primary" href="#quote" data-want="Christmas tree design and installation" data-en="Get my free quote" data-es="Pedir mi cotización gratis">Get my free quote</a>
         <a class="btn btn-ghost" href="#services" data-en="See the work" data-es="Ver el trabajo">See the work</a>
       </div>
       <p class="hero-proof" data-html
-         data-en="&lt;b&gt;13,278&lt;/b&gt; people follow the work on Instagram, where every finished tree gets posted. &lt;b&gt;Six&lt;/b&gt; Christmas seasons of them, going back to 2020."
-         data-es="&lt;b&gt;13.278&lt;/b&gt; personas siguen el trabajo en Instagram, donde se publica cada árbol terminado. &lt;b&gt;Seis&lt;/b&gt; temporadas de Navidad, desde 2020.">
-        <b>13,278</b> people follow the work on Instagram, where every finished tree gets posted. <b>Six</b> Christmas seasons of them, going back to 2020.
+         data-en="&lt;b&gt;13,278&lt;/b&gt; people follow the work on Instagram, where every finished tree gets posted. &lt;b&gt;Six&lt;/b&gt; Christmas seasons of them, going back to 2020. Serving Miami-Dade, Broward and West Palm Beach."
+         data-es="&lt;b&gt;13.278&lt;/b&gt; personas siguen el trabajo en Instagram, donde se publica cada árbol terminado. &lt;b&gt;Seis&lt;/b&gt; temporadas de Navidad, desde 2020. Atendemos Miami-Dade, Broward y West Palm Beach.">
+        <b>13,278</b> people follow the work on Instagram, where every finished tree gets posted. <b>Six</b> Christmas seasons of them, going back to 2020. Serving Miami-Dade, Broward and West Palm Beach.
       </p>
     </div>
     <figure class="hero-photo">
-      <img src="assets/tree-red-gold-classic-md.webp"
-           srcset="assets/tree-red-gold-classic-sm.webp 420w, assets/tree-red-gold-classic-md.webp 720w, assets/tree-red-gold-classic-lg.webp 1000w"
-           sizes="(max-width:940px) 88vw, 38vw" width="720" height="1280" fetchpriority="high" decoding="async"
-           alt="A complete red and gold Christmas tree at night, designed and installed by Rose Art and Decor in Miami">
+      <div class="plate">
+          <img src="assets/tree-red-gold-classic-md.webp"
+               srcset="assets/tree-red-gold-classic-sm.webp 420w, assets/tree-red-gold-classic-md.webp 720w, assets/tree-red-gold-classic-lg.webp 1000w"
+               sizes="(max-width:940px) 60vw, 30vw" width="720" height="1280" fetchpriority="high" decoding="async"
+               alt="A complete red and gold Christmas tree at night, designed and installed by Rose Art and Decor in Miami">
+      </div>
     </figure>
   </div>
 </section>
 
-<!-- ==================== the year, a compact schedule ================== -->
+<!-- ==================== the year, eight occasions as cards ============== -->
 <section id="year">
-  <div class="wrap yr-grid">
+  <div class="wrap">
     <div class="yr-head">
-      <p class="chapter" data-en="The year" data-es="El año">The year</p>
       <h2>
         <span data-en="A studio that lives on a calendar" data-es="Un estudio que vive del calendario">A studio that lives on a calendar</span>
         <span class="sub-es" data-en="Un estudio que vive del calendario" data-es="A studio that lives on a calendar">Un estudio que vive del calendario</span>
       </h2>
-      <p class="lede" data-en="Christmas is the mountain and it books from August. The rest of the year has its own dates, designed by the same three people."
-                      data-es="Navidad es la montaña y se reserva desde agosto. El resto del año tiene sus fechas, con las mismas tres personas.">
-        Christmas is the mountain and it books from August. The rest of the year has its own dates, designed by the same three people.
+      <p class="lede" data-en="Christmas is the mountain and it books from August. The rest of the year has its own dates, from the same three people. Tap an occasion."
+                      data-es="Navidad es la montaña y se reserva desde agosto. El resto del año tiene sus fechas, con las mismas tres personas de siempre. Toca una ocasión.">
+        Christmas is the mountain and it books from August. The rest of the year has its own dates, from the same three people. Tap an occasion.
       </p>
-      <div class="btn-row">
-        <a class="btn btn-primary" href="#quote" data-en="Get my free quote" data-es="Pedir mi cotización gratis">Get my free quote</a>
-      </div>
     </div>
-
-    <div class="sched">
-      <div class="sr">
-        <span class="mo" data-en="Feb" data-es="Feb">Feb</span>
-        <span class="oc" data-en="Valentine&#39;s" data-es="San Valentín">Valentine's</span>
-        <span class="de" data-en="Flowers, tables and the small installations ordered for someone else." data-es="Flores, mesas y montajes pequeños que se piden para otra persona.">Flowers, tables and the small installations ordered for someone else.</span>
-      </div>
-      <div class="sr">
-        <span class="mo" data-en="Mar to Apr" data-es="Mar a Abr">Mar to Apr</span>
-        <span class="oc" data-en="Spring" data-es="Primavera">Spring</span>
-        <span class="de" data-en="The seasonal refresh. Entry tables, mantels and consoles leave winter behind." data-es="El cambio de temporada. Recibidores, chimeneas y consolas dejan atrás el invierno.">The seasonal refresh. Entry tables, mantels and consoles leave winter behind.</span>
-      </div>
-      <div class="sr">
-        <span class="mo" data-en="May" data-es="May">May</span>
-        <span class="oc" data-en="Mother&#39;s Day" data-es="Día de las Madres">Mother's Day</span>
-        <span class="de" data-en="Florals and home installations for anyone arriving with more than a card." data-es="Flores y montajes en casa para quien llega con algo más que una tarjeta.">Florals and home installations for anyone arriving with more than a card.</span>
-      </div>
-      <div class="sr">
-        <span class="mo" data-en="May to Jun" data-es="May a Jun">May to Jun</span>
-        <span class="oc" data-en="Graduations" data-es="Graduaciones">Graduations</span>
-        <span class="de" data-en="Party and backdrop decor in school colours, at home or at the venue." data-es="Decoración y fondos en los colores del colegio, en casa o en el salón.">Party and backdrop decor in school colours, at home or at the venue.</span>
-      </div>
-      <div class="sr">
-        <span class="mo" data-en="Jul" data-es="Jul">Jul</span>
-        <span class="oc" data-en="Fourth of July" data-es="Cuatro de Julio">Fourth of July</span>
-        <span class="de" data-en="Red, white and blue, for the house and for the businesses that mark it." data-es="Rojo, blanco y azul, para la casa y para los negocios que lo celebran.">Red, white and blue, for the house and for the businesses that mark it.</span>
-      </div>
-      <a class="sr now" href="christmas-tree-decorating-miami/">
-        <span class="mo" data-en="Aug to Dec" data-es="Ago a Dic">Aug to Dec</span>
-        <span class="oc" data-en="Christmas" data-es="Navidad">Christmas</span>
-        <span class="de" data-en="Trees, garlands, staircases and lobbies. Five months of the year, booking now, by order of arrival." data-es="Árboles, guirnaldas, escaleras y lobbies. Cinco meses del año, reservando ahora, por orden de llegada.">Trees, garlands, staircases and lobbies. Five months of the year, booking now, by order of arrival.</span>
-      </a>
-      <div class="sr all">
-        <span class="mo" data-en="All year" data-es="Todo el año">All year</span>
-        <span class="oc" data-en="Plants and greenery" data-es="Plantas y verde">Plants and greenery</span>
-        <span class="de" data-en="Lobbies, offices, hotels and homes. The work with no season at all." data-es="Lobbies, oficinas, hoteles y casas. El trabajo que no tiene temporada.">Lobbies, offices, hotels and homes. The work with no season at all.</span>
-      </div>
+    <div class="szn-grid">
+      <button type="button" class="szn" data-szn="jan" data-want="Christmas tree design and installation">
+        <div class="plate"><img src="assets/process-installing-white-tree-sm.webp" srcset="assets/process-installing-white-tree-sm.webp 420w, assets/process-installing-white-tree-md.webp 720w" sizes="(max-width:640px) 46vw, 24vw" width="720" height="960" loading="lazy" decoding="async" alt="A Rose Art and Decor designer working on a white flocked tree"></div>
+        <span class="szn-c">
+          <span class="szn-mo" data-en="Jan" data-es="Ene">Jan</span>
+          <h3 data-en="Takedown" data-es="Desmontaje">Takedown</h3>
+          <span class="szn-de" data-en="The tree comes down in reverse order and goes back in the boxes by type, faster to open next year." data-es="El árbol se retira en orden inverso y vuelve a las cajas por tipo, más rápido de abrir el próximo año.">The tree comes down in reverse order and goes back in the boxes by type, faster to open next year.</span>
+          <span class="szn-open" data-en="Open" data-es="Abrir">Open</span>
+        </span>
+        <span class="szn-more" hidden><span data-en="Ask for it in the notes on the quote form and it gets priced alongside the install, so the whole season is one agreed number rather than a January surprise." data-es="Pídelo en las notas del formulario y se cotiza junto con la instalación, para que toda la temporada sea un solo número acordado y no una sorpresa de enero.">Ask for it in the notes on the quote form and it gets priced alongside the install, so the whole season is one agreed number rather than a January surprise.</span></span>
+        <span class="szn-link" hidden data-href="christmas-tree-installation-and-takedown-miami/" data-en="See install day and takedown" data-es="Ver montaje y desmontaje">See install day and takedown</span>
+      </button>
+      <button type="button" class="szn" data-szn="feb" data-want="Seasonal or holiday home decor">
+        <div class="plate ph"><span data-en="[REAL PHOTO NEEDED: a Valentine's table or install]" data-es="[FOTO REAL PENDIENTE: una mesa o montaje de San Valentín]">[REAL PHOTO NEEDED: a Valentine's table or install]</span></div>
+        <span class="szn-c">
+          <span class="szn-mo" data-en="Feb" data-es="Feb">Feb</span>
+          <h3 data-en="Valentine's" data-es="San Valentín">Valentine's</h3>
+          <span class="szn-de" data-en="Flowers, tables and the small installations ordered for someone else." data-es="Flores, mesas y montajes pequeños que se piden para otra persona.">Flowers, tables and the small installations ordered for someone else.</span>
+          <span class="szn-open" data-en="Open" data-es="Abrir">Open</span>
+        </span>
+        <span class="szn-more" hidden><span data-en="Send the date and a photo of the space, and it is in place before they walk in." data-es="Manda la fecha y una foto del espacio, y queda montado antes de que esa persona llegue.">Send the date and a photo of the space, and it is in place before they walk in.</span></span>
+        <span class="szn-link" hidden data-href="holiday-home-decorating-miami/" data-en="See seasonal decorating" data-es="Ver decoración de temporada">See seasonal decorating</span>
+      </button>
+      <button type="button" class="szn" data-szn="spring" data-want="Seasonal or holiday home decor">
+        <div class="plate ph"><span data-en="[REAL PHOTO NEEDED: a spring entry table or mantel]" data-es="[FOTO REAL PENDIENTE: un recibidor o chimenea de primavera]">[REAL PHOTO NEEDED: a spring entry table or mantel]</span></div>
+        <span class="szn-c">
+          <span class="szn-mo" data-en="Mar to Apr" data-es="Mar a Abr">Mar to Apr</span>
+          <h3 data-en="Spring" data-es="Primavera">Spring</h3>
+          <span class="szn-de" data-en="The seasonal refresh. Entry tables, mantels and consoles leave winter behind." data-es="El cambio de temporada. Recibidores, chimeneas y consolas dejan atrás el invierno.">The seasonal refresh. Entry tables, mantels and consoles leave winter behind.</span>
+          <span class="szn-open" data-en="Open" data-es="Abrir">Open</span>
+        </span>
+        <span class="szn-more" hidden><span data-en="Usually one visit, built around what you already own and the palette of the room." data-es="Normalmente una visita, armada con lo que ya tienes y la paleta del espacio.">Usually one visit, built around what you already own and the palette of the room.</span></span>
+        <span class="szn-link" hidden data-href="holiday-home-decorating-miami/" data-en="See seasonal decorating" data-es="Ver decoración de temporada">See seasonal decorating</span>
+      </button>
+      <button type="button" class="szn" data-szn="may" data-want="Seasonal or holiday home decor">
+        <div class="plate ph"><span data-en="[REAL PHOTO NEEDED: a Mother's Day floral install]" data-es="[FOTO REAL PENDIENTE: un montaje floral del Día de las Madres]">[REAL PHOTO NEEDED: a Mother's Day floral install]</span></div>
+        <span class="szn-c">
+          <span class="szn-mo" data-en="May" data-es="May">May</span>
+          <h3 data-en="Mother's Day" data-es="Día de las Madres">Mother's Day</h3>
+          <span class="szn-de" data-en="Florals and home installations for anyone arriving with more than a card." data-es="Flores y montajes en casa para quien llega con algo más que una tarjeta.">Florals and home installations for anyone arriving with more than a card.</span>
+          <span class="szn-open" data-en="Open" data-es="Abrir">Open</span>
+        </span>
+        <span class="szn-more" hidden><span data-en="Quoted by what is being set up, at your home or at hers." data-es="Se cotiza por lo que se monta, en tu casa o en la de ella.">Quoted by what is being set up, at your home or at hers.</span></span>
+        <span class="szn-link" hidden data-href="holiday-home-decorating-miami/" data-en="See seasonal decorating" data-es="Ver decoración de temporada">See seasonal decorating</span>
+      </button>
+      <button type="button" class="szn" data-szn="grad" data-want="Seasonal or holiday home decor">
+        <div class="plate ph"><span data-en="[REAL PHOTO NEEDED: a graduation backdrop]" data-es="[FOTO REAL PENDIENTE: fondo de graduación]">[REAL PHOTO NEEDED: a graduation backdrop]</span></div>
+        <span class="szn-c">
+          <span class="szn-mo" data-en="May to Jun" data-es="May a Jun">May to Jun</span>
+          <h3 data-en="Graduations" data-es="Graduaciones">Graduations</h3>
+          <span class="szn-de" data-en="Party and backdrop decor in school colors, at home or at the venue." data-es="Decoración y fondos en los colores del colegio, en casa o en el salón.">Party and backdrop decor in school colors, at home or at the venue.</span>
+          <span class="szn-open" data-en="Open" data-es="Abrir">Open</span>
+        </span>
+        <span class="szn-more" hidden><span data-en="Tell us the colors and the date. The backdrop is quoted from a photo of the wall it goes on." data-es="Dinos los colores y la fecha. El fondo se cotiza con una foto de la pared donde va.">Tell us the colors and the date. The backdrop is quoted from a photo of the wall it goes on.</span></span>
+        <span class="szn-link" hidden data-href="holiday-home-decorating-miami/" data-en="See seasonal decorating" data-es="Ver decoración de temporada">See seasonal decorating</span>
+      </button>
+      <button type="button" class="szn" data-szn="jul" data-want="Seasonal or holiday home decor">
+        <div class="plate ph"><span data-en="[REAL PHOTO NEEDED: a Fourth of July install]" data-es="[FOTO REAL PENDIENTE: montaje del 4 de Julio]">[REAL PHOTO NEEDED: a Fourth of July install]</span></div>
+        <span class="szn-c">
+          <span class="szn-mo" data-en="Jul" data-es="Jul">Jul</span>
+          <h3 data-en="Fourth of July" data-es="Cuatro de Julio">Fourth of July</h3>
+          <span class="szn-de" data-en="Red, white and blue, for the house and for the businesses that mark it." data-es="Rojo, blanco y azul, para la casa y para los negocios que lo celebran.">Red, white and blue, for the house and for the businesses that mark it.</span>
+          <span class="szn-open" data-en="Open" data-es="Abrir">Open</span>
+        </span>
+        <span class="szn-more" hidden><span data-en="Storefronts, lobbies and front rooms, set up before the long weekend." data-es="Locales, lobbies y salas, montados antes del fin de semana largo.">Storefronts, lobbies and front rooms, set up before the long weekend.</span></span>
+        <span class="szn-link" hidden data-href="holiday-home-decorating-miami/" data-en="See seasonal decorating" data-es="Ver decoración de temporada">See seasonal decorating</span>
+      </button>
+      <button type="button" class="szn now" data-szn="xmas" data-want="Christmas tree design and installation">
+        <div class="plate"><img src="assets/tree-nutcracker-red-sm.webp" srcset="assets/tree-nutcracker-red-sm.webp 420w, assets/tree-nutcracker-red-md.webp 720w" sizes="(max-width:640px) 46vw, 24vw" width="720" height="881" loading="lazy" decoding="async" alt="Red nutcracker themed Christmas tree with drums and oversized baubles"></div>
+        <span class="szn-c">
+          <span class="szn-mo" data-en="Aug to Dec" data-es="Ago a Dic">Aug to Dec</span>
+          <h3 data-en="Christmas" data-es="Navidad">Christmas</h3>
+          <span class="szn-de" data-en="Trees, garlands, staircases and lobbies. Five months of the year, booking now, by order of arrival." data-es="Árboles, guirnaldas, escaleras y lobbies. Cinco meses del año, reservando ahora, por orden de llegada.">Trees, garlands, staircases and lobbies. Five months of the year, booking now, by order of arrival.</span>
+          <span class="szn-open" data-en="Open" data-es="Abrir">Open</span>
+        </span>
+        <span class="szn-more" hidden><span data-en="The color story is written first, the tree is built in layers in your room, and takedown can go on the same quote." data-es="La paleta se escribe primero, el árbol se arma por capas en tu espacio, y el desmontaje puede ir en la misma cotización.">The color story is written first, the tree is built in layers in your room, and takedown can go on the same quote.</span></span>
+        <span class="szn-link" hidden data-href="christmas-tree-decorating-miami/" data-en="See the Christmas service" data-es="Ver el servicio de Navidad">See the Christmas service</span>
+      </button>
+      <button type="button" class="szn" data-szn="all" data-want="Plants and greenery styling">
+        <div class="plate"><img src="assets/commercial-lobby-plants-sm.webp" srcset="assets/commercial-lobby-plants-sm.webp 420w, assets/commercial-lobby-plants-md.webp 720w" sizes="(max-width:640px) 46vw, 24vw" width="720" height="1280" loading="lazy" decoding="async" alt="Tall planted greenery lining a modern Miami office lobby"></div>
+        <span class="szn-c">
+          <span class="szn-mo" data-en="All year" data-es="Todo el año">All year</span>
+          <h3 data-en="Plants and greenery" data-es="Plantas y verde">Plants and greenery</h3>
+          <span class="szn-de" data-en="Lobbies, offices, hotels and homes. The work with no season at all." data-es="Lobbies, oficinas, hoteles y casas. El trabajo que no tiene temporada.">Lobbies, offices, hotels and homes. The work with no season at all.</span>
+          <span class="szn-open" data-en="Open" data-es="Abrir">Open</span>
+        </span>
+        <span class="szn-more" hidden><span data-en="Real and faux greenery, styled per space, for the eleven months nobody is thinking about a tree." data-es="Verde natural y artificial, pensado por espacio, para los once meses en que nadie piensa en un árbol.">Real and faux greenery, styled per space, for the eleven months nobody is thinking about a tree.</span></span>
+        <span class="szn-link" hidden data-href="office-plant-and-lobby-decor-miami/" data-en="See plants and greenery" data-es="Ver plantas y verde">See plants and greenery</span>
+      </button>
     </div>
   </div>
 </section>
 
-<!-- ============ services: the interactive showcase ==================== -->
+<!-- ============ services: point at a row, the photograph answers ========= -->
 <section id="services" class="bg-cream2">
   <div class="wrap">
     <div class="sec-head">
       <h2>
-        <span data-en="What we do, and what it runs on" data-es="Lo que hacemos y sus precios">What we do, and what it runs on</span>
-        <span class="sub-es" data-en="Lo que hacemos y sus precios" data-es="What we do, and what it runs on">Lo que hacemos y sus precios</span>
+        <span data-en="What we do, and what it runs on" data-es="Lo que hacemos y sobre qué se cotiza">What we do, and what it runs on</span>
+        <span class="sub-es" data-en="Lo que hacemos y sus precios" data-es="What we do, and what it runs on">Lo que hacemos y sobre qué se cotiza</span>
       </h2>
-      <p class="lede" data-en="Eight services. Pick one and the photograph answers. Every tree is quoted individually, so each line shows what the price is built on, and the one flat fee there is."
-                      data-es="Ocho servicios. Elige uno y la fotografía responde. Cada árbol se cotiza individualmente, así que cada línea muestra sobre qué se arma el precio, y el único cargo fijo que existe.">
-        Eight services. Pick one and the photograph answers. Every tree is quoted individually, so each line shows what the price is built on, and the one flat fee there is.
+      <p class="lede" data-en="Eight services. Point at one and the photograph answers; click it and the page opens. Every tree is quoted individually, so each line shows what the price is built on, and the one flat fee there is."
+                      data-es="Ocho servicios. Señala uno y la foto responde; haz clic y se abre la página. Cada árbol se cotiza aparte, así que cada línea muestra sobre qué se arma el precio, y el único cargo fijo que hay.">
+        Eight services. Point at one and the photograph answers; click it and the page opens. Every tree is quoted individually, so each line shows what the price is built on, and the one flat fee there is.
       </p>
     </div>
 
     <div class="show">
-      <div class="show-list" role="tablist">
-        <button type="button" class="show-it aria-pressed="true"" data-panel="p0">
+      <div class="show-list">
+        <a class="show-it" href="christmas-tree-decorating-miami/" data-panel="p0" aria-current="true">
           <span class="t" data-en="Tree design and installation" data-es="Diseño e instalación del árbol">Tree design and installation</span>
           <span class="pr" data-en="Priced by tree height" data-es="Se cotiza por altura">Priced by tree height</span>
-        </button>
-        <button type="button" class="show-it" aria-pressed="false" data-panel="p1">
+        </a>
+        <a class="show-it" href="christmas-tree-decorating-cost-miami/" data-panel="p1">
           <span class="t" data-en="We buy the decorations" data-es="Nosotras compramos todo">We buy the decorations</span>
           <span class="pr" data-en="$60 flat sourcing fee" data-es="$60 fijos de gestión">$60 flat sourcing fee</span>
-        </button>
-        <button type="button" class="show-it" aria-pressed="false" data-panel="p2">
+        </a>
+        <a class="show-it" href="garland-and-staircase-decorating-miami/" data-panel="p2">
           <span class="t" data-en="Garlands and staircases" data-es="Guirnaldas y escaleras">Garlands and staircases</span>
           <span class="pr" data-en="Priced by the foot" data-es="Se cotiza por pie">Priced by the foot</span>
-        </button>
-        <button type="button" class="show-it" aria-pressed="false" data-panel="p3">
+        </a>
+        <a class="show-it" href="commercial-christmas-decorating-miami/" data-panel="p3">
           <span class="t" data-en="Lobbies and offices" data-es="Lobbies y oficinas">Lobbies and offices</span>
           <span class="pr" data-en="Priced per space" data-es="Se cotiza por espacio">Priced per space</span>
-        </button>
-        <button type="button" class="show-it" aria-pressed="false" data-panel="p4">
+        </a>
+        <a class="show-it" href="office-plant-and-lobby-decor-miami/" data-panel="p4">
           <span class="t" data-en="Plants and greenery" data-es="Plantas y verde">Plants and greenery</span>
           <span class="pr" data-en="All year, per space" data-es="Todo el año, por espacio">All year, per space</span>
-        </button>
-        <button type="button" class="show-it" aria-pressed="false" data-panel="p5">
+        </a>
+        <a class="show-it" href="holiday-home-decorating-miami/" data-panel="p5">
           <span class="t" data-en="Seasonal and holidays" data-es="Temporadas y fiestas">Seasonal and holidays</span>
           <span class="pr" data-en="Priced per occasion" data-es="Se cotiza por ocasión">Priced per occasion</span>
-        </button>
-        <button type="button" class="show-it" aria-pressed="false" data-panel="p6">
+        </a>
+        <a class="show-it" href="christmas-tree-installation-and-takedown-miami/" data-panel="p6">
           <span class="t" data-en="Setup and takedown" data-es="Montaje y desmontaje">Setup and takedown</span>
           <span class="pr" data-en="Added to your quote" data-es="Se suma a tu cotización">Added to your quote</span>
-        </button>
-        <button type="button" class="show-it" aria-pressed="false" data-panel="p7">
+        </a>
+        <a class="show-it" href="christmas-tree-color-themes/" data-panel="p7">
           <span class="t" data-en="The color stories" data-es="Las paletas">The color stories</span>
           <span class="pr" data-en="The gallery, free to browse" data-es="La galería, gratis">The gallery, free to browse</span>
-        </button>
+        </a>
       </div>
       <div class="show-panels">
         <div class="panel active" id="p0">
-          <figure><img src="assets/tree-gold-beige-green-md.webp" srcset="assets/tree-gold-beige-green-sm.webp 420w, assets/tree-gold-beige-green-md.webp 720w" sizes="(max-width:940px) 84vw, 44vw" width="720" height="900" loading="eager" decoding="async" alt="Gold, beige and green Christmas tree fully decorated in a Miami home"></figure>
-          <div class="panel-c">
-            <h3 data-en="Tree design and installation" data-es="Diseño e instalación del árbol">Tree design and installation</h3>
-            <p data-en="The color story written first, then the tree built in layers in your room. Finished in one visit." data-es="La paleta por escrito, después el árbol por capas en tu espacio. Listo en una visita.">The color story written first, then the tree built in layers in your room. Finished in one visit.</p>
-            <p class="basis" data-en="Priced by tree height" data-es="Se cotiza por altura">Priced by tree height</p>
-            <a href="christmas-tree-decorating-miami/" data-en="See this service" data-es="Ver este servicio">See this service</a>
-          </div>
+          <a class="panel-link" href="christmas-tree-decorating-miami/">
+            <div class="plate"><img src="assets/tree-gold-beige-green-md.webp" srcset="assets/tree-gold-beige-green-sm.webp 420w, assets/tree-gold-beige-green-md.webp 720w" sizes="(max-width:900px) 46vw, 44vw" width="720" height="900" loading="eager" decoding="async" alt="Gold, beige and green Christmas tree fully decorated in a Miami home"></div>
+            <div class="panel-c">
+              <h3 data-en="Tree design and installation" data-es="Diseño e instalación del árbol">Tree design and installation</h3>
+              <p data-en="The color story written first, then the tree built in layers in your room. Finished in one visit." data-es="La paleta por escrito, después el árbol por capas en tu espacio. Listo en una visita.">The color story written first, then the tree built in layers in your room. Finished in one visit.</p>
+              <p class="basis" data-en="Priced by tree height" data-es="Se cotiza por altura">Priced by tree height</p>
+              <span class="go" data-en="Open this service" data-es="Abrir este servicio">Open this service</span>
+            </div>
+          </a>
         </div>
         <div class="panel" id="p1">
-          <figure><img src="assets/detail-gold-green-cluster-md.webp" srcset="assets/detail-gold-green-cluster-sm.webp 420w, assets/detail-gold-green-cluster-md.webp 720w" sizes="(max-width:940px) 84vw, 44vw" width="720" height="900" loading="lazy" decoding="async" alt="Gold and green ornaments clustered with sheer ribbon"></figure>
-          <div class="panel-c">
-            <h3 data-en="We buy the decorations" data-es="Nosotras compramos todo">We buy the decorations</h3>
-            <p data-en="A day of sourcing the palette. $60 flat plus what the materials cost, and it all stays yours." data-es="Un día buscando la paleta. $60 fijos más lo que cuesten los materiales, y todo queda tuyo.">A day of sourcing the palette. $60 flat plus what the materials cost, and it all stays yours.</p>
-            <p class="basis" data-en="$60 flat sourcing fee" data-es="$60 fijos de gestión">$60 flat sourcing fee</p>
-            <a href="christmas-tree-decorating-cost-miami/" data-en="See this service" data-es="Ver este servicio">See this service</a>
-          </div>
+          <a class="panel-link" href="christmas-tree-decorating-cost-miami/">
+            <div class="plate"><img src="assets/detail-gold-green-cluster-md.webp" srcset="assets/detail-gold-green-cluster-sm.webp 420w, assets/detail-gold-green-cluster-md.webp 720w" sizes="(max-width:900px) 46vw, 44vw" width="720" height="900" loading="lazy" decoding="async" alt="Gold and green ornaments clustered with sheer ribbon"></div>
+            <div class="panel-c">
+              <h3 data-en="We buy the decorations" data-es="Nosotras compramos todo">We buy the decorations</h3>
+              <p data-en="A day of sourcing the palette. $60 flat plus what the materials cost, and it all stays yours." data-es="Un día buscando la paleta. $60 fijos más lo que cuesten los materiales, y todo queda tuyo.">A day of sourcing the palette. $60 flat plus what the materials cost, and it all stays yours.</p>
+              <p class="basis" data-en="$60 flat sourcing fee" data-es="$60 fijos de gestión">$60 flat sourcing fee</p>
+              <span class="go" data-en="Open this service" data-es="Abrir este servicio">Open this service</span>
+            </div>
+          </a>
         </div>
         <div class="panel" id="p2">
-          <figure><img src="assets/staircase-gold-garland-md.webp" srcset="assets/staircase-gold-garland-sm.webp 420w, assets/staircase-gold-garland-md.webp 720w" sizes="(max-width:940px) 84vw, 44vw" width="720" height="720" loading="lazy" decoding="async" alt="Gold garland running the full length of a staircase railing"></figure>
-          <div class="panel-c">
-            <h3 data-en="Garlands and staircases" data-es="Guirnaldas y escaleras">Garlands and staircases</h3>
-            <p data-en="The railing is seen from both floors and the front door at once. It earns more than any room." data-es="La baranda se ve desde los dos pisos y la entrada a la vez. Rinde más que cualquier habitación.">The railing is seen from both floors and the front door at once. It earns more than any room.</p>
-            <p class="basis" data-en="Priced by the foot" data-es="Se cotiza por pie">Priced by the foot</p>
-            <a href="garland-and-staircase-decorating-miami/" data-en="See this service" data-es="Ver este servicio">See this service</a>
-          </div>
+          <a class="panel-link" href="garland-and-staircase-decorating-miami/">
+            <div class="plate"><img src="assets/staircase-gold-garland-md.webp" srcset="assets/staircase-gold-garland-sm.webp 420w, assets/staircase-gold-garland-md.webp 720w" sizes="(max-width:900px) 46vw, 44vw" width="720" height="720" loading="lazy" decoding="async" alt="Gold garland running the full length of a staircase railing"></div>
+            <div class="panel-c">
+              <h3 data-en="Garlands and staircases" data-es="Guirnaldas y escaleras">Garlands and staircases</h3>
+              <p data-en="The railing is seen from both floors and the front door at once. It earns more than any room." data-es="La baranda se ve desde los dos pisos y la entrada a la vez. Rinde más que cualquier habitación.">The railing is seen from both floors and the front door at once. It earns more than any room.</p>
+              <p class="basis" data-en="Priced by the foot" data-es="Se cotiza por pie">Priced by the foot</p>
+              <span class="go" data-en="Open this service" data-es="Abrir este servicio">Open this service</span>
+            </div>
+          </a>
         </div>
         <div class="panel" id="p3">
-          <figure><img src="assets/commercial-lobby-red-tree-md.webp" srcset="assets/commercial-lobby-red-tree-sm.webp 420w, assets/commercial-lobby-red-tree-md.webp 720w" sizes="(max-width:940px) 84vw, 44vw" width="720" height="960" loading="lazy" decoding="async" alt="Large Christmas display with a life size nutcracker in a Miami lobby"></figure>
-          <div class="panel-c">
-            <h3 data-en="Lobbies and offices" data-es="Lobbies y oficinas">Lobbies and offices</h3>
-            <p data-en="Built to read across a lobby, installed outside your business hours, quoted after a walkthrough." data-es="Pensado para verse desde el otro lado del lobby, instalado fuera de tu horario, cotizado tras una visita.">Built to read across a lobby, installed outside your business hours, quoted after a walkthrough.</p>
-            <p class="basis" data-en="Priced per space" data-es="Se cotiza por espacio">Priced per space</p>
-            <a href="commercial-christmas-decorating-miami/" data-en="See this service" data-es="Ver este servicio">See this service</a>
-          </div>
+          <a class="panel-link" href="commercial-christmas-decorating-miami/">
+            <div class="plate"><img src="assets/commercial-lobby-red-tree-md.webp" srcset="assets/commercial-lobby-red-tree-sm.webp 420w, assets/commercial-lobby-red-tree-md.webp 720w" sizes="(max-width:900px) 46vw, 44vw" width="720" height="960" loading="lazy" decoding="async" alt="Large Christmas display with a life size nutcracker in a Miami lobby"></div>
+            <div class="panel-c">
+              <h3 data-en="Lobbies and offices" data-es="Lobbies y oficinas">Lobbies and offices</h3>
+              <p data-en="Built to read across a lobby, installed outside your business hours, quoted after a walkthrough." data-es="Pensado para verse desde el otro lado del lobby, instalado fuera de tu horario, cotizado tras una visita.">Built to read across a lobby, installed outside your business hours, quoted after a walkthrough.</p>
+              <p class="basis" data-en="Priced per space" data-es="Se cotiza por espacio">Priced per space</p>
+              <span class="go" data-en="Open this service" data-es="Abrir este servicio">Open this service</span>
+            </div>
+          </a>
         </div>
         <div class="panel" id="p4">
-          <figure><img src="assets/commercial-lobby-plants-md.webp" srcset="assets/commercial-lobby-plants-sm.webp 420w, assets/commercial-lobby-plants-md.webp 720w" sizes="(max-width:940px) 84vw, 44vw" width="720" height="1280" loading="lazy" decoding="async" alt="Tall planted greenery lining a modern Miami office lobby"></figure>
-          <div class="panel-c">
-            <h3 data-en="Plants and greenery" data-es="Plantas y verde">Plants and greenery</h3>
-            <p data-en="Real and faux greenery for lobbies, offices, hotels and homes. The work with no season." data-es="Verde natural y artificial para lobbies, oficinas, hoteles y casas. El trabajo sin temporada.">Real and faux greenery for lobbies, offices, hotels and homes. The work with no season.</p>
-            <p class="basis" data-en="All year, per space" data-es="Todo el año, por espacio">All year, per space</p>
-            <a href="office-plant-and-lobby-decor-miami/" data-en="See this service" data-es="Ver este servicio">See this service</a>
-          </div>
+          <a class="panel-link" href="office-plant-and-lobby-decor-miami/">
+            <div class="plate"><img src="assets/commercial-lobby-plants-md.webp" srcset="assets/commercial-lobby-plants-sm.webp 420w, assets/commercial-lobby-plants-md.webp 720w" sizes="(max-width:900px) 46vw, 44vw" width="720" height="1280" loading="lazy" decoding="async" alt="Tall planted greenery lining a modern Miami office lobby"></div>
+            <div class="panel-c">
+              <h3 data-en="Plants and greenery" data-es="Plantas y verde">Plants and greenery</h3>
+              <p data-en="Real and faux greenery for lobbies, offices, hotels and homes. The work with no season." data-es="Verde natural y artificial para lobbies, oficinas, hoteles y casas. El trabajo sin temporada.">Real and faux greenery for lobbies, offices, hotels and homes. The work with no season.</p>
+              <p class="basis" data-en="All year, per space" data-es="Todo el año, por espacio">All year, per space</p>
+              <span class="go" data-en="Open this service" data-es="Abrir este servicio">Open this service</span>
+            </div>
+          </a>
         </div>
         <div class="panel" id="p5">
-          <figure><img src="assets/detail-blush-ornament-md.webp" srcset="assets/detail-blush-ornament-sm.webp 420w, assets/detail-blush-ornament-md.webp 720w" sizes="(max-width:940px) 84vw, 44vw" width="720" height="900" loading="lazy" decoding="async" alt="Blush and sage ornament with ribbon from a seasonal installation"></figure>
-          <div class="panel-c">
-            <h3 data-en="Seasonal and holidays" data-es="Temporadas y fiestas">Seasonal and holidays</h3>
-            <p data-en="Valentine's, spring, Mother's Day and graduations. Every date on the calendar." data-es="San Valentín, primavera, madres y graduaciones. Cada fecha del calendario.">Valentine's, spring, Mother's Day and graduations. Every date on the calendar.</p>
-            <p class="basis" data-en="Priced per occasion" data-es="Se cotiza por ocasión">Priced per occasion</p>
-            <a href="holiday-home-decorating-miami/" data-en="See this service" data-es="Ver este servicio">See this service</a>
-          </div>
+          <a class="panel-link" href="holiday-home-decorating-miami/">
+            <div class="plate"><img src="assets/detail-blush-ornament-md.webp" srcset="assets/detail-blush-ornament-sm.webp 420w, assets/detail-blush-ornament-md.webp 720w" sizes="(max-width:900px) 46vw, 44vw" width="720" height="900" loading="lazy" decoding="async" alt="Blush and sage ornament with ribbon from a seasonal installation"></div>
+            <div class="panel-c">
+              <h3 data-en="Seasonal and holidays" data-es="Temporadas y fiestas">Seasonal and holidays</h3>
+              <p data-en="Valentine's, spring, Mother's Day and graduations. Every date on the calendar." data-es="San Valentín, primavera, madres, graduaciones. Cada fecha del año.">Valentine's, spring, Mother's Day and graduations. Every date on the calendar.</p>
+              <p class="basis" data-en="Priced per occasion" data-es="Se cotiza por ocasión">Priced per occasion</p>
+              <span class="go" data-en="Open this service" data-es="Abrir este servicio">Open this service</span>
+            </div>
+          </a>
         </div>
         <div class="panel" id="p6">
-          <figure><img src="assets/process-installing-teal-tree-md.webp" srcset="assets/process-installing-teal-tree-sm.webp 420w, assets/process-installing-teal-tree-md.webp 720w" sizes="(max-width:940px) 84vw, 44vw" width="720" height="960" loading="lazy" decoding="async" alt="A designer installing a teal and silver Christmas tree"></figure>
-          <div class="panel-c">
-            <h3 data-en="Setup and takedown" data-es="Montaje y desmontaje">Setup and takedown</h3>
-            <p data-en="We build it in place and come back for it in January, priced now so it is already decided." data-es="Lo armamos ahí mismo y volvemos en enero, cotizado ahora para que ya esté decidido.">We build it in place and come back for it in January, priced now so it is already decided.</p>
-            <p class="basis" data-en="Added to your quote" data-es="Se suma a tu cotización">Added to your quote</p>
-            <a href="christmas-tree-installation-and-takedown-miami/" data-en="See this service" data-es="Ver este servicio">See this service</a>
-          </div>
+          <a class="panel-link" href="christmas-tree-installation-and-takedown-miami/">
+            <div class="plate"><img src="assets/process-installing-teal-tree-md.webp" srcset="assets/process-installing-teal-tree-sm.webp 420w, assets/process-installing-teal-tree-md.webp 720w" sizes="(max-width:900px) 46vw, 44vw" width="720" height="960" loading="lazy" decoding="async" alt="A designer installing a teal and silver Christmas tree"></div>
+            <div class="panel-c">
+              <h3 data-en="Setup and takedown" data-es="Montaje y desmontaje">Setup and takedown</h3>
+              <p data-en="We build it in place and come back for it in January, priced now so it is already decided." data-es="Lo armamos ahí mismo y volvemos en enero, cotizado ahora para que ya esté decidido.">We build it in place and come back for it in January, priced now so it is already decided.</p>
+              <p class="basis" data-en="Added to your quote" data-es="Se suma a tu cotización">Added to your quote</p>
+              <span class="go" data-en="Open this service" data-es="Abrir este servicio">Open this service</span>
+            </div>
+          </a>
         </div>
         <div class="panel" id="p7">
-          <figure><img src="assets/tree-white-blue-polar-md.webp" srcset="assets/tree-white-blue-polar-sm.webp 420w, assets/tree-white-blue-polar-md.webp 720w" sizes="(max-width:940px) 84vw, 44vw" width="720" height="960" loading="lazy" decoding="async" alt="Flocked white tree with icy blue ornaments and polar bears"></figure>
-          <div class="panel-c">
-            <h3 data-en="The color stories" data-es="Las paletas">The color stories</h3>
-            <p data-en="Nine finished trees by palette, so you can point at the one that is already yours." data-es="Nueve árboles terminados por paleta, para que señales el que ya es tuyo.">Nine finished trees by palette, so you can point at the one that is already yours.</p>
-            <p class="basis" data-en="The gallery, free to browse" data-es="La galería, gratis">The gallery, free to browse</p>
-            <a href="christmas-tree-color-themes/" data-en="See this service" data-es="Ver este servicio">See this service</a>
-          </div>
+          <a class="panel-link" href="christmas-tree-color-themes/">
+            <div class="plate"><img src="assets/tree-white-blue-polar-md.webp" srcset="assets/tree-white-blue-polar-sm.webp 420w, assets/tree-white-blue-polar-md.webp 720w" sizes="(max-width:900px) 46vw, 44vw" width="720" height="960" loading="lazy" decoding="async" alt="Flocked white tree with icy blue ornaments and polar bears"></div>
+            <div class="panel-c">
+              <h3 data-en="The color stories" data-es="Las paletas">The color stories</h3>
+              <p data-en="Nine finished trees by palette, so you can point at the one that is yours." data-es="Nueve árboles terminados por paleta, para que señales el que ya es tuyo.">Nine finished trees by palette, so you can point at the one that is yours.</p>
+              <p class="basis" data-en="The gallery, free to browse" data-es="La galería, gratis">The gallery, free to browse</p>
+              <span class="go" data-en="Open this service" data-es="Abrir este servicio">Open this service</span>
+            </div>
+          </a>
         </div>
       </div>
     </div>
@@ -376,7 +440,6 @@
       <img src="assets/team-rose-and-crew-md.webp" srcset="assets/team-rose-and-crew-sm.webp 420w, assets/team-rose-and-crew-md.webp 720w, assets/team-rose-and-crew-lg.webp 1000w" sizes="(max-width:940px) 92vw, 46vw" width="720" height="960" loading="lazy" decoding="async" alt="Two members of the Rose Art and Decor team standing beside a finished silver and blue Christmas tree">
     </div>
     <div>
-      <p class="chapter" data-en="Who turns up at your door" data-es="Quién llega a tu puerta">Who turns up at your door</p>
       <h2>
         <span data-en="Rose, Emi and Rebe" data-es="Rose, Emi y Rebe">Rose, Emi and Rebe</span>
         <span class="sub-es" data-en="Rose, Emi y Rebe" data-es="Rose, Emi and Rebe">Rose, Emi y Rebe</span>
@@ -402,7 +465,6 @@
 <section id="quote" class="bg-cream2">
   <div class="wrap-narrow">
     <div class="sec-head" style="max-width:100%">
-      <p class="chapter" data-en="Your free quote" data-es="Tu cotización gratis">Your free quote</p>
       <h2>
         <span data-en="Tell us about your tree" data-es="Cuéntanos de tu árbol">Tell us about your tree</span>
         <span class="sub-es" data-en="Cuéntanos de tu árbol" data-es="Tell us about your tree">Cuéntanos de tu árbol</span>
@@ -515,7 +577,6 @@
       </form>
 
       <div class="form-done" id="formDone">
-        <div class="tick"></div>
         <h3 data-en="Thank you, it is in" data-es="Gracias, ya llegó">Thank you, it is in</h3>
         <p data-en="Your request landed with Rose Art &amp; Decor. You will hear back with a quote as soon as possible, on the contact method you picked."
            data-es="Tu solicitud llegó a Rose Art &amp; Decor. Te responderemos con una cotización lo antes posible, por el medio que elegiste.">
@@ -582,6 +643,7 @@
   </div>
 </section>
 
+</main>
 <!-- =============================== FOOTER =============================== -->
 <footer class="foot">
   <div class="wrap">
@@ -634,6 +696,22 @@
     </div>
   </div>
 </footer>
+
+<div class="mdl" id="sznModal" role="dialog" aria-modal="true" aria-labelledby="mdlTitle">
+  <div class="mdl-box">
+    <button type="button" class="mdl-x" id="mdlClose" aria-label="Close">&times;</button>
+    <div class="mdl-media" id="mdlMedia"></div>
+    <div class="mdl-c">
+      <span class="szn-mo" id="mdlMo"></span>
+      <h3 id="mdlTitle"></h3>
+      <p id="mdlText"></p>
+      <div class="btn-row">
+        <a class="btn btn-primary" id="mdlQuote" href="#quote" data-en="Get my free quote" data-es="Pedir mi cotización gratis">Get my free quote</a>
+        <a class="btn btn-ghost" id="mdlLink" href="#"></a>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script src="assets/site.js"></script>
 </body>

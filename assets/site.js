@@ -53,9 +53,13 @@ if ('scrollRestoration' in history) { history.scrollRestoration = 'auto'; }
     var d = document.documentElement.getAttribute('data-desc-' + lang);
     if (d) { var m = $('meta[name="description"]'); if (m) m.setAttribute('content', d); }
 
-    $$('.lang button').forEach(function (b) {
-      b.setAttribute('aria-pressed', String(b.getAttribute('data-set') === lang));
+    var other = lang === 'en' ? 'es' : 'en';
+    $$('.lang-sw').forEach(function (b) {
+      b.setAttribute('data-set', other);
+      b.textContent = other === 'es' ? 'Español' : 'English';
+      b.setAttribute('aria-label', other === 'es' ? 'Cambiar a español' : 'Switch to English');
     });
+    if (typeof closeModal === 'function') closeModal();
 
     // open accordion panels change height when the copy changes
     resyncAccordion();
@@ -72,7 +76,7 @@ if ('scrollRestoration' in history) { history.scrollRestoration = 'auto'; }
     applyLang(pick);
   })();
 
-  $$('.lang button').forEach(function (b) {
+  $$('.lang-sw').forEach(function (b) {
     b.addEventListener('click', function () { applyLang(b.getAttribute('data-set')); });
   });
 
@@ -105,7 +109,7 @@ if ('scrollRestoration' in history) { history.scrollRestoration = 'auto'; }
   }
 
   /* ------------------------------------------------ 3. anchors + intents -- */
-  $$('a[href^="#"]').forEach(function (link) {
+  $$('a[href^="#"]:not(.skip-link)').forEach(function (link) {
     link.addEventListener('click', function (e) {
       var id = link.getAttribute('href');
       if (id.length < 2) return;
@@ -281,6 +285,8 @@ if ('scrollRestoration' in history) { history.scrollRestoration = 'auto'; }
 
       // ---- map onto the client's existing Google Form ----
       var pick = function (n) { var c = $('input[name="' + n + '"]:checked', form); return c ? c.value : ''; };
+      // Must match the option text in Rose's Google Form exactly. Her form still says $50;
+      // update this string the day she edits the form to $60, not before.
       var BUY_YES = 'Yes (Extra $50 fee, plus total material cost)';
       var BUY_NO  = 'No, I will purchase and provide all the required decorations.';
       var AROUND_NO = 'No, my tree is against a wall/surface and I would only like the exposed parts to be decorated.';
@@ -346,12 +352,66 @@ if ('scrollRestoration' in history) { history.scrollRestoration = 'auto'; }
   var its = $$('.show-it');
   if (its.length) {
     function setPanel(id) {
-      its.forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-panel') === id)); });
+      its.forEach(function (b) {
+        if (b.getAttribute('data-panel') === id) b.setAttribute('aria-current', 'true');
+        else b.removeAttribute('aria-current');
+      });
       $$('.panel').forEach(function (pn) { pn.classList.toggle('active', pn.id === id); });
     }
     its.forEach(function (b) {
-      b.addEventListener('click', function () { setPanel(b.getAttribute('data-panel')); });
-      b.addEventListener('mouseenter', function () { setPanel(b.getAttribute('data-panel')); });
+      ['mouseenter', 'focus'].forEach(function (ev) {
+        b.addEventListener(ev, function () { setPanel(b.getAttribute('data-panel')); });
+      });
+    });
+  }
+
+  /* ------------------------------------------------ 9. occasion modal ----- */
+  var mdl = $('#sznModal');
+  var lastFocus = null;
+  function closeModal() {
+    if (!mdl || !mdl.classList.contains('open')) return;
+    mdl.classList.remove('open');
+    document.body.classList.remove('drawer-open');
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  if (mdl) {
+    var media = $('#mdlMedia'), mMo = $('#mdlMo'), mTitle = $('#mdlTitle'), mText = $('#mdlText');
+    var mQuote = $('#mdlQuote'), mLink = $('#mdlLink');
+    function openModal(card) {
+      lastFocus = card;
+      var plate = card.querySelector('.plate');
+      media.innerHTML = '';
+      if (plate) {
+        var c = plate.cloneNode(true);
+        var im = c.querySelector('img');
+        if (im) { im.setAttribute('sizes', '(max-width:900px) 92vw, 44vw'); im.removeAttribute('loading'); }
+        media.appendChild(c);
+      }
+      var mo = card.querySelector('.szn-mo'), t = card.querySelector('h3');
+      var de = card.querySelector('.szn-de'), more = card.querySelector('.szn-more span');
+      var link = card.querySelector('.szn-link');
+      mMo.textContent = mo ? mo.textContent : '';
+      mTitle.textContent = t ? t.textContent : '';
+      mText.textContent = (de ? de.textContent : '') + (more ? ' ' + more.textContent : '');
+      mQuote.setAttribute('data-want', card.getAttribute('data-want') || '');
+      if (link) { mLink.href = link.getAttribute('data-href'); mLink.textContent = link.textContent; mLink.style.display = ''; }
+      else { mLink.style.display = 'none'; }
+      mdl.classList.add('open');
+      document.body.classList.add('drawer-open');
+      $('#mdlClose').focus();
+    }
+    $$('.szn').forEach(function (card) {
+      card.addEventListener('click', function () { openModal(card); });
+    });
+    $('#mdlClose').addEventListener('click', closeModal);
+    mdl.addEventListener('click', function (e) { if (e.target === mdl) closeModal(); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && mdl.classList.contains('open')) closeModal();
+    });
+    mQuote.addEventListener('click', function () {
+      var sel = $('#f-service'), v = mQuote.getAttribute('data-want');
+      if (sel && v) Array.prototype.forEach.call(sel.options, function (o) { if (o.value === v) sel.selectedIndex = o.index; });
+      closeModal();
     });
   }
 
