@@ -341,39 +341,34 @@ if ('scrollRestoration' in history) { history.scrollRestoration = 'auto'; }
       var city = $('#f-city', form), size = $('#f-size', form);
       var locStr = city.value.trim();
 
-      // ---- map onto the client's existing Google Form ----
+      // ---- Netlify Forms: posts to this site, emails Rose ----
       var pick = function (n) { var c = $('input[name="' + n + '"]:checked', form); return c ? c.value : ''; };
-      // Must match the option text in Rose's Google Form exactly. Her form still says $50;
-      // update this string the day she edits the form to $60, not before.
-      var BUY_YES = 'Yes (Extra $50 fee, plus total material cost)';
-      var BUY_NO  = 'No, I will purchase and provide all the required decorations.';
-      var AROUND_NO = 'No, my tree is against a wall/surface and I would only like the exposed parts to be decorated.';
 
       var owned = pick('owned');
-      var buy = owned === 'No' ? (pick('buy') === 'Yes' ? BUY_YES : BUY_NO) : BUY_NO;
-      var around = pick('around') === 'Yes' ? 'Yes' : AROUND_NO;
+      var buy = owned === 'No'
+        ? (pick('buy') === 'Yes' ? 'Yes: $60 flat plus the cost of the materials' : 'No: the client buys and provides everything')
+        : 'Not needed: the client already owns the decorations';
+      var around = pick('around') === 'Yes' ? 'Yes, finished all the way around' : 'No, against a wall, exposed sides only';
 
       var service = $('#f-service') ? $('#f-service').value : '';
       var notes = $('#f-notes') ? $('#f-notes').value.trim() : '';
-      var combined = (service ? 'Service requested: ' + service + '\n' : '') +
-                     (notes ? notes + '\n' : '') +
-                     'Sent from roseartanddecor website (' + (lang === 'es' ? 'Espanol' : 'English') + ')';
 
       var data = new URLSearchParams();
-      data.append('entry.1000027', name.value.trim());
-      data.append('entry.1000057', email.value.trim());
-      data.append('entry.967112212', phone.value.trim());
-      data.append('entry.602909070', ($('#f-instagram') ? $('#f-instagram').value.trim() : ''));
-      data.append('entry.2055232012', locStr);
-      data.append('entry.824677231', size.value.trim());
-      data.append('entry.1000020', owned);
-      data.append('entry.1000022', buy);
-      data.append('entry.1000025', around);
-      data.append('entry.1000026', pick('contact'));
-      data.append('entry.1000023', combined);
-      data.append('fvv', '1');
-      data.append('pageHistory', '0');
-      data.append('submit', 'Submit');
+      data.append('form-name', 'quote');
+      data.append('bot-field', '');
+      data.append('name', name.value.trim());
+      data.append('email', email.value.trim());
+      data.append('phone', phone.value.trim());
+      data.append('instagram', ($('#f-instagram') ? $('#f-instagram').value.trim() : ''));
+      data.append('city', locStr);
+      data.append('size', size.value.trim());
+      data.append('service', service);
+      data.append('owned', owned);
+      data.append('buy', buy);
+      data.append('around', around);
+      data.append('contact', pick('contact'));
+      data.append('notes', notes);
+      data.append('language', lang === 'es' ? 'Espanol' : 'English');
 
       var btn = $('#submitBtn');
       if (btn) { btn.disabled = true; btn.textContent = lang === 'es' ? 'Enviando' : 'Sending'; }
@@ -383,25 +378,18 @@ if ('scrollRestoration' in history) { history.scrollRestoration = 'auto'; }
         var ok = $('#formDone');
         if (ok) { ok.classList.add('show'); ok.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
       };
+      var oops = function () {
+        if (btn) {
+          btn.disabled = false;
+          btn.textContent = lang === 'es' ? 'No se pudo enviar. Intenta de nuevo' : 'It did not send. Try again';
+        }
+      };
 
-      fetch(GFORM, {
+      fetch('/', {
         method: 'POST',
-        mode: 'no-cors',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: data.toString()
-      }).then(done).catch(function () {
-        // fallback: hidden iframe post, same payload
-        var f = document.createElement('form');
-        f.action = GFORM; f.method = 'POST'; f.target = 'gformSink'; f.style.display = 'none';
-        data.forEach(function (v, k) {
-          var i = document.createElement('input'); i.type = 'hidden'; i.name = k; i.value = v; f.appendChild(i);
-        });
-        var sink = document.createElement('iframe');
-        sink.name = 'gformSink'; sink.style.display = 'none';
-        document.body.appendChild(sink); document.body.appendChild(f);
-        f.submit();
-        setTimeout(done, 900);
-      });
+      }).then(function (r) { if (r.ok) { done(); } else { oops(); } }).catch(oops);
     });
   }
 
